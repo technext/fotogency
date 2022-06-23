@@ -1,6 +1,6 @@
 mixin Footer 
   +PreFooter
-  +Section.py-0.bg-black
+  +Section('container').py-0.bg-black
     .row.justify-content-md-between.justify-content-evenly.py-4
       .col-12.col-sm-8.col-md-6.col-lg-auto.text-center.text-md-start 
         p.fs--1.my-2.fw-light.text-200 All rights Reserved &copy; Your Company, 2021
@@ -57,7 +57,7 @@ mixin PreFooter
           link: 'https://www.youtube.com/'
         }
       ]
-    .row.mw-xl.mx-auto.g-6.g-md-0
+    .row.g-6.g-md-0
       .col-md-6 
         .mb-4.d-inline-block
           a.navbar-brand.pt-0.text-white.d-flex.align-items-center(href='/')
@@ -74,7 +74,7 @@ mixin PreFooter
           input.form-control.bg-transparent.border-0.rounded-0.border.border-bottom.border-400.form-control#floatingEmail(type='email' placeholder='name@example.com')
           label.text-400(for='floatingEmail') Email
           .position-absolute.end-0.top-50
-            span.fa-solid.fa-arrow-right-long.text-400.me-2
+            img(src=`${CWD}assets/img/icons/long-arrow.png` alt="arrow icon").ms-3
         .col.d-flex.flex-wrap.justify-content-between.align-items-center
           each social in socials
             a.social-icons(href=social.link target='_blank')=social.text

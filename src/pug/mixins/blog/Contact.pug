@@ -5,9 +5,9 @@ mixin Contact
         h1.text-uppercase.fs-lg-8.fs-6.fw-bolder.text-300.lh-1.position-relative.zIndex-0 Contact
         h1.d-none.d-md-block.fw-bolder.text-outlined.fs-7.text-white.lh-1.mt-n4.position-relative.zIndex-n1 Get in Touch
         form.my-5
-          .row.g-0.mw-xl.mx-auto
+          .row.g-0.g-md-5
             .col-md-6.pe-xxl-0
-              .card.border-0.px-3
+              .card.border-0
                 .form-floating.mb-3
                   input.form-control.input-box.form-ensurance-header-control#floatingEmail(type='email' placeholder='name@example.com')
                   label(for='floatingEmail') Email
@@ -24,7 +24,7 @@ mixin Contact
                   input.form-control.input-box.form-ensurance-header-control.text-400#floatingDate(type='date' placeholder='Desired Date')
                   label(for='floatingDate') Desired Date
             .col-md-6.pe-xxl-0
-              .card.border-0.px-3
+              .card.border-0
                 .form-floating.opacity-0.pe-none
                     input.form-control.input-box.form-ensurance-header-control
                 .form-floating.mb-3
@@ -36,4 +36,4 @@ mixin Contact
             .col-12.text-end.mt-3
               button.btn.btn-link.text-warning.p-0(type='submit')
                 span.fw-bolder.text-uppercase Submit
-                span.fa-solid.fa-arrow-right-long.ms-3
+                img(src=`${CWD}assets/img/icons/long-arrow.png` alt="arrow icon").ms-3
