@@ -1,0 +1,39 @@
+mixin Contact
+  +Section.py-4
+    .row.align-items-center
+      .my-4.text-center
+        h1.text-uppercase.fs-lg-8.fs-6.fw-bolder.text-300.lh-1.position-relative.zIndex-0 Contact
+        h1.d-none.d-md-block.fw-bolder.text-outlined.fs-7.text-white.lh-1.mt-n4.position-relative.zIndex-n1 Get in Touch
+        form.my-5
+          .row.g-0.mw-xl.mx-auto
+            .col-md-6.pe-xxl-0
+              .card.border-0.px-3
+                .form-floating.mb-3
+                  input.form-control.input-box.form-ensurance-header-control#floatingEmail(type='email' placeholder='name@example.com')
+                  label(for='floatingEmail') Email
+                .form-floating.mb-3
+                  input.form-control.input-box.form-ensurance-header-control#floatingName(type='text' placeholder='name')
+                  label(for='floatingName') Your name
+                .form-floating.mb-3
+                  input.form-control.input-box.form-ensurance-header-control#floatingPhone(type='tel' placeholder='name@example.com')
+                  label(for='floatingPhone') Phone number
+                .form-floating.mb-3
+                  input.form-control.input-box.form-ensurance-header-control#floatingLocation(type='address' placeholder='Desired Location')
+                  label(for='floatingLocation') Desired location
+                .form-floating.mb-3
+                  input.form-control.input-box.form-ensurance-header-control.text-400#floatingDate(type='date' placeholder='Desired Date')
+                  label(for='floatingDate') Desired Date
+            .col-md-6.pe-xxl-0
+              .card.border-0.px-3
+                .form-floating.opacity-0.pe-none
+                    input.form-control.input-box.form-ensurance-header-control
+                .form-floating.mb-3
+                  textarea.form-control.border.ps-2.input-box.form-ensurance-header-control#floatingTextarea(style="height: 225px" ,placeholder='Leave a comment here')
+                  label.ps-2(for='floatingTextarea') Message
+                .form-floating.mb-3
+                  input.form-control.input-box.form-ensurance-header-control#floatingSource(type='text' placeholder='How did you hear about us?')
+                  label(for='floatingSource') How did you hear about us?
+            .col-12.text-end.mt-3
+              button.btn.btn-link.text-warning.p-0(type='submit')
+                span.fw-bolder.text-uppercase Submit
+                span.fa-solid.fa-arrow-right-long.ms-3

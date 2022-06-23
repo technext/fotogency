@@ -1,0 +1,78 @@
+append variables 
+  -
+    var routes = [
+      {
+        href: '/',
+        text: 'Home'
+      },
+      {
+        href: '/portfolio.html',
+        text: 'Portfolio'
+      },
+      {
+        href: '/gallery.html',
+        text: 'Gallery'
+      },
+      {
+        href: '/exhibitions.html',
+        text: 'Exhibitions'
+      },
+      {
+        href: '/about.html',
+        text: 'About'
+      },
+      {
+        href: '/blog.html',
+        text: 'Blog'
+      }
+    ]
+
+mixin Navbar({pageTitle, pageSubtitle})
+  nav.navbar.navbar-light.py-3.overflow-hidden
+    .container.px-0.px-md-3
+      .row.w-100
+        .col-8
+          a.navbar-brand.pt-0.text-black.d-flex.align-items-center(href='/')
+            img(src=`${CWD}assets/img/icons/logo-icon.png` alt="logo icon").img-fluid
+            span.fs-3.fw-bolder.ms-2 Foto
+            span.fw-thin.fs-3 gency
+
+          if pageTitle != 'Home'
+            .mt-4.d-none.d-lg-block
+              h1.text-uppercase.fs-lg-7.fs-5.fw-bolder.text-300.lh-1.position-relative.zIndex-0=pageTitle
+              h1.d-none.d-md-block.fw-bolder.text-outlined.fs-7.text-white.lh-1.mt-n4.position-relative.zIndex-n1=pageSubtitle
+
+
+        .col-4.d-lg-none.text-end
+          div.text-black.fs-2.d-inline-block(type="button", data-bs-toggle='offcanvas' data-bs-target='#navbarOffcanvas' aria-controls='navbarOffcanvas' aria-expanded='false' aria-label='Toggle offcanvas navigation')
+            span.menu-bar
+        +MenuOffcanvas(pageTitle)
+
+        .col-4
+          .d-none.d-lg-flex.justify-content-end.position-relative(style="z-index: 1")
+            .position-absolute.absolute-centered(style="z-index: -1")
+              h1.ms-2.fw-bolder.text-outlined.text-uppercase.text-white.pe-none.fs-8=pageTitle
+
+            .d-flex.gap-3
+              p.mb-0.ms-auto.text-warning.fs-0.fw-bold.text-uppercase Contact Now
+
+              ul.navbar-nav.ms-auto.text-end
+                each route in routes
+                  li.nav-item.px-2
+                    a.nav-link.pt-0(aria-current='page', href=route.href class= pageTitle === route.text ? 'active-nav' : '' )=route.text
+      if pageTitle != 'Home'
+        .row.mt-4.d-lg-none
+          h1.text-uppercase.fs-lg-7.fs-5.fw-bolder.text-300.lh-1.position-relative.zIndex-0=pageTitle
+          h1.d-none.d-md-block.fw-bolder.text-outlined.fs-7.text-white.lh-1.mt-n4.position-relative.zIndex-n1=pageSubtitle
+
+mixin MenuOffcanvas(pageTitle)
+  .offcanvas.offcanvas-end.px-0(id='navbarOffcanvas', aria-labelledby='navbarOffcanvasTitle', aria-hidden='true')
+    .offcanvas-header.justify-content-end
+      div.text-black.fs-2.d-inline.text-end(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+        span.menu-close-bar
+    .offcanvas-body.px-0
+      .d-lg-flex.flex-center-start.gap-3.overflow-hidden         
+        ul.navbar-nav.ms-auto.fs-4.ps-6
+          each route in routes
+            li.nav-item
+              a.nav-link.d-inline-block.nav-text-outlined.lh-1.text-white(aria-current='page', href=route.href class= pageTitle === route.text ? 'active' : '' )=route.text

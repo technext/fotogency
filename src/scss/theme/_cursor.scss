@@ -1,0 +1,40 @@
+
+.cursor-outer {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  border: 1px solid $warning;
+  background-color: rgba($warning, 0.2);
+  transition: all 150ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  transform: translate(calc(-50% + 15px), -50%);
+  backdrop-filter: blur(1px);
+  
+  &.link-hover {
+      background-color: transparent;
+      width: 65px;
+      height: 65px;
+      backdrop-filter: none;
+      background-blend-mode: color-burn;
+  }
+}
+
+.cursor-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: $warning;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 99999;
+  transition: width .3s, height .3s, opacity .3s;
+
+  &.link-hover {
+    display: none;
+  }
+}

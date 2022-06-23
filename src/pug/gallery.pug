@@ -1,0 +1,26 @@
+extends layouts/LayoutTheme
+include mixins/gallery/Gallery
+
+
+append variables
+    - 
+        var pageInfo = {
+            pageTitle: 'Gallery',
+            pageSubtitle: 'All Works',
+        }
+
+
+append styles  
+    link(href=`${CWD}vendors/glightbox/glightbox.min.css`, rel='stylesheet')
+
+prepend scripts
+    script(src=`${CWD}vendors/glightbox/glightbox.min.js`)
+
+
+block content 
+    +Gallery 
+
+
+
+
+

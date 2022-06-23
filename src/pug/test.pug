@@ -1,0 +1,45 @@
+
+- 
+  var people = [
+    {
+      name: 'Tanveer',
+      age: '25',
+      address: 'Sector-10, Uttara, Dhaka'
+    },
+    {
+      name: 'Zaif',
+      age: '26',
+      address: '38/1, Gulshan, Dhaka'
+    }
+  ]
+
+mixin TableRow(person)
+  tr(style=`${person.age > 25 ? 'background-color: #f5f5f5;' : ''}`)&attributes(attributes)
+    td= person.name
+    td= person.age
+    td= person.address
+
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+  body
+    a
+      img(src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2015%2F04%2F23%2F22%2F00%2Ftree-736885__480.jpg&imgrefurl=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fnature%2F&tbnid=DH7p1w2o_fIU8M&vet=12ahUKEwjehe_m8Lj4AhW3j9gFHTZYBakQMygAegUIARCyAQ..i&docid=Ba_eiczVaD9-zM&w=771&h=480&q=image&ved=2ahUKEwjehe_m8Lj4AhW3j9gFHTZYBakQMygAegUIARCyAQ", alt="google")
+
+    .container
+      table(style="width:100%; border-collapse:collapse;")
+        thead
+          tr(style="text-align: left; background-color: #f5f5f5;")
+            th Name 
+            th Age
+            th Address
+        tbody(style="background-color: #fff;")
+        each person in people
+          +TableRow(person)(class="table__row")
+
+

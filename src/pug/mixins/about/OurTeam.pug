@@ -1,0 +1,48 @@
+mixin OurTeam
+  -
+    var teamMembers = [
+      {
+        name: 'Farnaq N. Tamxeed',
+        position: 'CEO',
+        avatar: 'img1.png',
+      },
+      {
+        name: 'Jessica Turner',
+        position: 'Art Director',
+        avatar: 'img2.png',
+      },
+      {
+        name: 'Farnaq N. Tamxeed',
+        position: 'Cinematographer',
+        avatar: 'img3.png',
+      },
+      {
+        name: 'Jessica Turner',
+        position: 'Art Director',
+        avatar: 'img4.png',
+      },
+      {
+        name: 'Farnaq N. Tamxeed',
+        position: 'CEO',
+        avatar: 'img5.png',
+      },
+    ]
+
+  +Section('container').py-2
+    .row.mw-xl.mx-auto.d-flex.flex-wrap.justify-content-center
+      each member in teamMembers
+        .col-lg-4.col-md-6.d-flex.justify-content-center
+          .card.border-0.mb-3
+            img.card-img-top(src=`${CWD}assets/img/team/${member.avatar}` alt=member.name)
+            .d-flex.justify-content-between.pt-3
+              .w-50
+                h3=member.name
+                p.text-warning=member.position
+              .fs-2.d-flex.gap-2
+                a(href="https://www.linkedin.com/")
+                  span.text-400.fab.fa-linkedin.ml-3
+                a(href="https://www.facebook.com/")
+                  span.text-400.fab.fa-facebook.ml-3
+                a(href="https://www.instagram.com/")
+                  span.text-400.fab.fa-instagram.ml-3
+
