@@ -20778,7 +20778,7 @@ code[class*=language-], pre[class*=language-] {
 /*                                    Outlined Text                              */
 /* -------------------------------------------------------------------------- */
 .nav-text-outlined {
-  -webkit-text-stroke: var(--fg-200) 0.5px;
+  -webkit-text-stroke: var(--fg-300) 0.5px;
   font-weight: bold !important;
 }
 .nav-text-outlined.active {
@@ -22351,7 +22351,7 @@ iframe.yt-video.loaded {
   height: 45px;
   border-radius: 100%;
   border: 1px solid #F59300;
-  background-color: rgba(245, 147, 0, 0.2);
+  background-color: rgba(245, 147, 0, 0);
   -webkit-transition: all 150ms ease-out;
   -o-transition: all 150ms ease-out;
   transition: all 150ms ease-out;

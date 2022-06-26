@@ -75,4 +75,4 @@ mixin MenuOffcanvas(pageTitle)
         ul.navbar-nav.ms-auto.fs-4.ps-6
           each route in routes
             li.nav-item
-              a.nav-link.d-inline-block.nav-text-outlined.lh-1.text-white(aria-current='page', href=route.href class= pageTitle === route.text ? 'active' : '' )=route.text
+              a.nav-link.d-inline-block.nav-text-outlined.lh-1.text-white(aria-current='page', href=route.href class=pageTitle === route.text ? 'active' : '' )=route.text

@@ -125,7 +125,7 @@
 /*                                    Outlined Text                              */
 /* -------------------------------------------------------------------------- */
 .nav-text-outlined {
-  -webkit-text-stroke: var(--#{$variable-prefix}200) 0.5px;
+  -webkit-text-stroke: var(--#{$variable-prefix}300) 0.5px;
   font-weight: bold !important; 
 
   &.active {

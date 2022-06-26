@@ -342,26 +342,24 @@ var DomNode = /*#__PURE__*/function () {
   return DomNode;
 }();
 
-var cursor = document.querySelector('.cursor-outer');
-var cursorinner = document.querySelector('.cursor-inner');
+var cursor = document.querySelector('.cursor-outer'); // const cursorinner = document.querySelector('.cursor-inner');
+
 var targets = document.querySelectorAll(['a', '.btn', "[type='button']", 'input', 'textarea']);
 document.addEventListener('mousemove', function (e) {
   cursor.style.transform = "translate3d(calc(".concat(e.clientX, "px - 50%), calc(").concat(e.clientY, "px - 50%), 0)");
-});
-document.addEventListener('mousemove', function (e) {
-  var x = e.clientX;
-  var y = e.clientY;
-  cursorinner.style.left = "".concat(x, "px");
-  cursorinner.style.top = "".concat(y, "px");
-});
+}); // document.addEventListener('mousemove', (e) => {
+//   const x = e.clientX;
+//   const y = e.clientY;
+//   cursorinner.style.left = `${x}px`;
+//   cursorinner.style.top = `${y}px`;
+// });
+
 targets.forEach(function (item) {
   item.addEventListener('mouseover', function () {
-    cursor.classList.add('link-hover');
-    cursorinner.classList.add('link-hover');
+    cursor.classList.add('link-hover'); // cursorinner.classList.add('link-hover');
   });
   item.addEventListener('mouseleave', function () {
-    cursor.classList.remove('link-hover');
-    cursorinner.classList.remove('link-hover');
+    cursor.classList.remove('link-hover'); // cursorinner.classList.remove('link-hover');
   });
 });
 /* -------------------------------------------------------------------------- */
