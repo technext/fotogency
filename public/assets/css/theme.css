@@ -20909,7 +20909,7 @@ code[class*=language-], pre[class*=language-] {
 /*                                  Glightbox                                 */
 /* -------------------------------------------------------------------------- */
 .glightbox-open {
-  overflow: unset !important;
+  overflow: auto !important;
 }
 
 .gscrollbar-fixer {
@@ -20919,6 +20919,16 @@ code[class*=language-], pre[class*=language-] {
 [data-gallery] {
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
+}
+
+.glightbox-clean .gslide-description {
+  background: transparent !important;
+}
+.glightbox-clean .gslide-title {
+  color: #fff !important;
+  text-align: center;
+  font-weight: bold !important;
+  font-size: 1.2rem !important;
 }
 
 /* -------------------------------------------------------------------------- */

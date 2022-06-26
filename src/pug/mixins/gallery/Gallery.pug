@@ -4,55 +4,55 @@ append variables
       {
         image: "1.png",
         title: "To infinity and beyond",
-        sub: "Iching biching chiching",
+        description: "Iching biching chiching",
         class: "col-lg-3 col-sm-6 col-12"
       },
       {
         image: "2.png",
         title: "To infinity and beyond",
-        sub: "Iching biching chiching",
+        description: "Iching biching chiching",
         class: "col-lg-3 col-sm-6 col-12"
       },
       {
         image: "3.png",
         title: "To infinity and beyond",
-        sub: "Iching biching chiching",
+        description: "Iching biching chiching",
         class: "col-lg-6 col-12"
       },
       {
         image: "4.png",
         title: "To infinity and beyond",
-        sub: "Iching biching chiching",
+        description: "Iching biching chiching",
         class: "col-lg-6 col-12"
       },
       {
         image: "5.png",
         title: "To infinity and beyond",
-        sub: "Iching biching chiching",
+        description: "Iching biching chiching",
         class: "col-lg-3 col-sm-6 col-12"
       },
       {
         image: "6.png",
         title: "To infinity and beyond",
-        sub: "Iching biching chiching",
+        description: "Iching biching chiching",
         class: "col-lg-3 col-sm-6 col-12"
       },
       {
         image: "7.png",
         title: "To infinity and beyond",
-        sub: "Iching biching chiching",
+        description: "Iching biching chiching",
         class: "col-lg-3 col-sm-6 col-12"
       },
       {
         image: "8.png",
         title: "To infinity and beyond",
-        sub: "Iching biching chiching",
+        description: "Iching biching chiching",
         class: "col-lg-3 col-sm-6 col-12"
       },
       {
         image: "9.png",
         title: "To infinity and beyond",
-        sub: "Iching biching chiching",
+        description: "Iching biching chiching",
         class: "col-lg-6 col-12"
       }
     ]
@@ -62,4 +62,4 @@ mixin Gallery
     .row.g-3
       each image, i in galleryImages
         div(class=image.class type="button").gallery-item
-          img(src=`${CWD}assets/img/gallery/${image.image}` alt="" data-gallery).img-fluid.w-100
+          img(src=`${CWD}assets/img/gallery/${image.image}` alt=image.title data-gallery).img-fluid.w-100
