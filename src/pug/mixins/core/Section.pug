@@ -2,17 +2,12 @@
 //-    A wireframe for every section
 //- ===============================================
 
-mixin Section(background, container)
+mixin Section(container)
   = '\n\n'
   // ============================================
   // <section> begin ============================
   section&attributes(attributes)
     = '\n'
-    //- Background
-    - if (typeof(background) === 'object') {
-    +Background(background)
-    - } else if (typeof(background === 'string') && typeof(container) === 'undefined') { container = background }
-
     //- Container for content
     - if (typeof(container) === 'undefined') { container = 'container mw-xxl mx-auto' }
     div(class=container)

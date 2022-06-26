@@ -22103,34 +22103,6 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
   overflow-y: hidden;
 }
 
-.yt-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: -100000;
-  pointer-events: none;
-}
-
-iframe.yt-video {
-  opacity: 0;
-}
-iframe.yt-video.loaded {
-  opacity: 1;
-}
-
-.player {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
 .hero-header-form {
   margin-top: 3rem;
   border: 1px solid rgba(94, 220, 212, 0.39);
@@ -22138,18 +22110,6 @@ iframe.yt-video.loaded {
 @media (min-width: 540px) {
   .hero-header-form {
     margin-top: 10rem;
-  }
-}
-
-.feature-img {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #5EDCD4;
-  border-radius: 1.125rem;
-}
-@media (min-width: 1140px) {
-  .feature-img {
-    border-radius: 3.125rem;
   }
 }
 
@@ -22241,88 +22201,6 @@ iframe.yt-video.loaded {
     -webkit-transform: scale(2);
     -ms-transform: scale(2);
     transform: scale(2);
-  }
-}
-
-.circle-wrapper {
-  position: relative;
-  z-index: 999;
-  height: 200px;
-  width: 200px;
-  padding: 0;
-}
-.circle-wrapper::before {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  border: 1px solid #5EDCD4;
-  border-radius: 50%;
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-  opacity: 0.3;
-}
-@media (min-width: 720px) {
-  .circle-wrapper {
-    height: 250px;
-    width: 250px;
-  }
-  .circle-wrapper::before {
-    height: 100%;
-    width: 100%;
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-}
-@media (min-width: 1140px) {
-  .circle-wrapper::before {
-    -webkit-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
-  }
-}
-@media (min-width: 1440px) {
-  .circle-wrapper {
-    height: 350px;
-    width: 350px;
-  }
-  .circle-wrapper::before {
-    -webkit-transform: scale(1.8);
-    -ms-transform: scale(1.8);
-    transform: scale(1.8);
-  }
-}
-
-.testimonial-bg {
-  background-color: #186be87d;
-}
-@media (min-width: 720px) {
-  .testimonial-bg {
-    max-height: 250px;
-    border-radius: 220px 0 0 220px;
-  }
-}
-@media (min-width: 1440px) {
-  .testimonial-bg {
-    max-height: 350px;
-    border-radius: 220px 0 0 220px;
-  }
-}
-
-.card-span-img {
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-@media (min-width: 720px) {
-  .card-span-img {
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
   }
 }
 
