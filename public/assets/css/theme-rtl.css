@@ -20081,9 +20081,9 @@ ul {
   position: absolute;
   content: "";
   height: 1px;
-  width: 100%;
+  width: 10000%;
   top: 40%;
-  left: -110%;
+  left: -10010%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -20865,6 +20865,14 @@ code[class*=language-], pre[class*=language-] {
   border-radius: 50%;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
+}
+
+.team-social-icon {
+  color: var(--fg-400);
+  padding: 0 5px;
+}
+.team-social-icon:hover {
+  color: #F59300;
 }
 
 /* -------------------------------------------------------------------------- */

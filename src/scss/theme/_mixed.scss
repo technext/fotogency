@@ -222,3 +222,11 @@
   border-radius: 50%;
   backdrop-filter: blur(5px);
 }
+
+.team-social-icon {
+  color: var(--#{$variable-prefix}400);
+  padding: 0 5px;
+  &:hover {
+     color: $warning;
+  }
+}

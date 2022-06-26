@@ -49,12 +49,12 @@ mixin Navbar({pageTitle, pageSubtitle})
         +MenuOffcanvas(pageTitle)
 
         .col-4
-          .d-none.d-lg-flex.justify-content-end.position-relative(style="z-index: 1")
-            .position-absolute.absolute-centered(style="z-index: -1")
+          .d-none.d-lg-flex.justify-content-end.position-relative.zIndex-1
+            .position-absolute.absolute-centered.zIndex-n1
               h1.ms-2.fw-bolder.text-outlined.text-uppercase.text-white.pe-none.fs-8=pageTitle
 
             .d-flex.gap-3
-              p.mb-0.ms-auto.text-warning.fs-0.fw-bold.text-uppercase Contact Now
+              a(href="blog.html#contact").mb-0.ms-auto.text-warning.fs-0.fw-bold.text-uppercase Contact Now
 
               ul.navbar-nav.ms-auto.text-end
                 each route in routes
@@ -75,4 +75,4 @@ mixin MenuOffcanvas(pageTitle)
         ul.navbar-nav.ms-auto.fs-4.ps-6
           each route in routes
             li.nav-item
-              a.nav-link.d-inline-block.nav-text-outlined.lh-1.text-white(aria-current='page', href=route.href class=pageTitle === route.text ? 'active' : '' )=route.text
+              a.nav-link.d-inline-block.nav-text-outlined.lh-1.text-white.fs-5(aria-current='page', href=route.href class=pageTitle === route.text ? 'active' : '' )=route.text
