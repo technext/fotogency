@@ -341,91 +341,101 @@ var DomNode = /*#__PURE__*/function () {
 
   return DomNode;
 }();
+
+var cursor = document.querySelector('.cursor-outer'); // const cursorinner = document.querySelector('.cursor-inner');
+
+var targets = document.querySelectorAll(['a', '.btn', "[type='button']", 'input', 'textarea']);
+document.addEventListener('mousemove', function (e) {
+  cursor.style.transform = "translate3d(calc(".concat(e.clientX, "px - 50%), calc(").concat(e.clientY, "px - 50%), 0)");
+}); // document.addEventListener('mousemove', (e) => {
+//   const x = e.clientX;
+//   const y = e.clientY;
+//   cursorinner.style.left = `${x}px`;
+//   cursorinner.style.top = `${y}px`;
+// });
+
+targets.forEach(function (item) {
+  item.addEventListener('mouseover', function () {
+    cursor.classList.add('link-hover'); // cursorinner.classList.add('link-hover');
+  });
+  item.addEventListener('mouseleave', function () {
+    cursor.classList.remove('link-hover'); // cursorinner.classList.remove('link-hover');
+  });
+});
+/* -------------------------------------------------------------------------- */
+
+/*                                 Glightbox                                */
+
+/* -------------------------------------------------------------------------- */
+
+var glightboxInit = function glightboxInit() {
+  if (window.GLightbox) {
+    window.GLightbox({
+      selector: '[data-gallery]'
+    });
+  }
+}; // import Swiper from 'swiper';
+// const swiperInit = () =>
+//   new Swiper('.swiper-theme', {
+//     slidesPerView: 1.2,
+//     spaceBetween: 30,
+//     pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//     },
+//   });
+// export default swiperInit;
+
 /*-----------------------------------------------
-|   Top navigation opacity on scroll
+|  Swiper
 -----------------------------------------------*/
 
 
-var navbarInit = function navbarInit() {
-  var Selector = {
-    NAVBAR: '[data-navbar-on-scroll]',
-    NAVBAR_COLLAPSE: '.navbar-collapse',
-    NAVBAR_TOGGLER: '.navbar-toggler'
-  };
-  var ClassNames = {
-    COLLAPSED: 'collapsed'
-  };
-  var Events = {
-    SCROLL: 'scroll',
-    SHOW_BS_COLLAPSE: 'show.bs.collapse',
-    HIDE_BS_COLLAPSE: 'hide.bs.collapse',
-    HIDDEN_BS_COLLAPSE: 'hidden.bs.collapse'
-  };
-  var DataKey = {
-    NAVBAR_ON_SCROLL: 'navbar-light-on-scroll'
-  };
-  var navbar = document.querySelector(Selector.NAVBAR);
+var swiperInit = function swiperInit() {
+  var swipers = document.querySelectorAll('[data-swiper]');
+  var navbarVerticalToggle = document.querySelector('.navbar-vertical-toggle');
+  swipers.forEach(function (swiper) {
+    var options = utils.getData(swiper, 'swiper');
+    var thumbsOptions = options.thumb;
+    var thumbsInit;
 
-  if (navbar) {
-    var windowHeight = window.innerHeight;
-    var html = document.documentElement;
-    var navbarCollapse = navbar.querySelector(Selector.NAVBAR_COLLAPSE);
+    if (thumbsOptions) {
+      var thumbImages = swiper.querySelectorAll('img');
+      var slides = '';
+      thumbImages.forEach(function (img) {
+        slides += "\n          <div class='swiper-slide '>\n            <img class='img-fluid rounded mt-1' src=".concat(img.src, " alt=''/>\n          </div>\n        ");
+      });
+      var thumbs = document.createElement('div');
+      thumbs.setAttribute('class', 'swiper-container thumb');
+      thumbs.innerHTML = "<div class='swiper-wrapper'>".concat(slides, "</div>");
 
-    var allColors = _objectSpread(_objectSpread({}, utils.colors), utils.grays);
-
-    var name = utils.getData(navbar, DataKey.NAVBAR_ON_SCROLL);
-    var colorName = Object.keys(allColors).includes(name) ? name : 'dark';
-    var color = allColors[colorName];
-    var bgClassName = "bg-".concat(colorName);
-    var shadowName = 'shadow-transition';
-    var colorRgb = utils.hexToRgb(color);
-
-    var _window$getComputedSt = window.getComputedStyle(navbar),
-        backgroundImage = _window$getComputedSt.backgroundImage;
-
-    var transition = 'background-color 0.35s ease';
-    navbar.style.backgroundImage = 'none'; // Change navbar background color on scroll
-
-    window.addEventListener(Events.SCROLL, function () {
-      var scrollTop = html.scrollTop;
-      var alpha = scrollTop / windowHeight * 5;
-      alpha >= 1 && (alpha = 1);
-      navbar.style.backgroundColor = "rgba(".concat(colorRgb[0], ", ").concat(colorRgb[1], ", ").concat(colorRgb[2], ", ").concat(alpha, ")");
-      navbar.style.backgroundImage = alpha > 0 || utils.hasClass(navbarCollapse, 'show') ? backgroundImage : 'none';
-      alpha > 0 || utils.hasClass(navbarCollapse, 'show') ? navbar.classList.add(shadowName) : navbar.classList.remove(shadowName);
-    }); // Toggle bg class on window resize
-
-    utils.resize(function () {
-      var breakPoint = utils.getBreakpoint(navbar);
-
-      if (window.innerWidth > breakPoint) {
-        navbar.style.backgroundImage = html.scrollTop ? backgroundImage : 'none';
-        navbar.style.transition = 'none';
-      } else if (!utils.hasClass(navbar.querySelector(Selector.NAVBAR_TOGGLER), ClassNames.COLLAPSED)) {
-        navbar.classList.add(bgClassName);
-        navbar.classList.add(shadowName);
-        navbar.style.backgroundImage = backgroundImage;
+      if (thumbsOptions.parent) {
+        var parent = document.querySelector(thumbsOptions.parent);
+        parent.parentNode.appendChild(thumbs);
+      } else {
+        swiper.parentNode.appendChild(thumbs);
       }
 
-      if (window.innerWidth <= breakPoint) {
-        navbar.style.transition = utils.hasClass(navbarCollapse, 'show') ? transition : 'none';
+      thumbsInit = new window.Swiper(thumbs, thumbsOptions);
+    }
+
+    var swiperNav = swiper.querySelector('.swiper-nav');
+    var newSwiper = new window.Swiper(swiper, _objectSpread(_objectSpread({}, options), {}, {
+      navigation: {
+        nextEl: swiperNav === null || swiperNav === void 0 ? void 0 : swiperNav.querySelector('.swiper-button-next'),
+        prevEl: swiperNav === null || swiperNav === void 0 ? void 0 : swiperNav.querySelector('.swiper-button-prev')
+      },
+      thumbs: {
+        swiper: thumbsInit
       }
-    });
-    navbarCollapse.addEventListener(Events.SHOW_BS_COLLAPSE, function () {
-      navbar.classList.add(bgClassName);
-      navbar.classList.add(shadowName);
-      navbar.style.backgroundImage = backgroundImage;
-      navbar.style.transition = transition;
-    });
-    navbarCollapse.addEventListener(Events.HIDE_BS_COLLAPSE, function () {
-      navbar.classList.remove(bgClassName);
-      navbar.classList.remove(shadowName);
-      !html.scrollTop && (navbar.style.backgroundImage = 'none');
-    });
-    navbarCollapse.addEventListener(Events.HIDDEN_BS_COLLAPSE, function () {
-      navbar.style.transition = 'none';
-    });
-  }
+    }));
+
+    if (navbarVerticalToggle) {
+      navbarVerticalToggle.addEventListener('navbar.vertical.toggle', function () {
+        newSwiper.update();
+      });
+    }
+  });
 };
 /* -------------------------------------------------------------------------- */
 
@@ -434,6 +444,8 @@ var navbarInit = function navbarInit() {
 /* -------------------------------------------------------------------------- */
 
 
-docReady(navbarInit);
 docReady(detectorInit);
+docReady(swiperInit);
+docReady(glightboxInit);
+docReady(cursor);
 //# sourceMappingURL=theme.js.map
