@@ -149,7 +149,7 @@
 }
 
 .text-outlined {
-  text-shadow: -1px -1px 0 var(--#{$variable-prefix}100),1px -1px 0 var(--#{$variable-prefix}100),-1px 1px 0 var(--#{$variable-prefix}100),1px 1px 0 var(--#{$variable-prefix}100);
+ -webkit-text-stroke: var(--#{$variable-prefix}100) 0.5px;
   font-weight: bold !important; 
 }
 

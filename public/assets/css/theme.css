@@ -20801,7 +20801,7 @@ code[class*=language-], pre[class*=language-] {
 }
 
 .text-outlined {
-  text-shadow: -1px -1px 0 var(--fg-100), 1px -1px 0 var(--fg-100), -1px 1px 0 var(--fg-100), 1px 1px 0 var(--fg-100);
+  -webkit-text-stroke: var(--fg-100) 0.5px;
   font-weight: bold !important;
 }
 

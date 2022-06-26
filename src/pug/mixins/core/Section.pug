@@ -9,7 +9,7 @@ mixin Section(container)
   section&attributes(attributes)
     = '\n'
     //- Container for content
-    - if (typeof(container) === 'undefined') { container = 'container mw-xxl mx-auto' }
+    - if (typeof(container) === 'undefined') { container = 'container' }
     div(class=container)
 
       block
