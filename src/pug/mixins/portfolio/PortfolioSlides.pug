@@ -18,7 +18,12 @@ mixin PortfolioSlides
       .row
         .col-lg-12.pb-6.mb-lg-0
           .swiper-container.swiper-theme(data-swiper!={
-            slidesPerView: 1.2,
+            slidesPerView: 1,
+            breakpoints: {
+              576: {
+                slidesPerView: 1.2,
+              },
+            },
             spaceBetween: 30,
             grabCursor: true,
             pagination: {
