@@ -6,7 +6,7 @@ mixin Contact
         h1.d-none.d-md-block.fw-bolder.text-outlined.fs-7.text-white.lh-1.mt-n4.position-relative.zIndex-n1 Get in Touch
         form.my-5
           .row.g-0.g-md-5
-            .col-md-6.pe-xxl-0
+            .col-md-6
               .card.border-0
                 .form-floating.mb-3
                   input.form-control.input-box.form-ensurance-header-control#floatingEmail(type='email' placeholder='name@example.com')
@@ -21,12 +21,12 @@ mixin Contact
                   input.form-control.input-box.form-ensurance-header-control#floatingLocation(type='address' placeholder='Desired Location')
                   label(for='floatingLocation') Desired location
                 .form-floating.mb-3
-                  input.form-control.input-box.form-ensurance-header-control.text-400#floatingDate(type='date' placeholder='Desired Date')
+                  input.form-control.input-box.form-ensurance-header-control.text-400#floatingDate(type='text' placeholder='Desired Date')
                   label(for='floatingDate') Desired Date
-            .col-md-6.pe-xxl-0
+            .col-md-6
               .card.border-0
                 .form-floating.opacity-0.pe-none
-                    input.form-control.input-box.form-ensurance-header-control
+                  input.form-control.input-box.form-ensurance-header-control
                 .form-floating.mb-3
                   textarea.form-control.border.ps-2.input-box.form-ensurance-header-control#floatingTextarea(style="height: 225px" ,placeholder='Leave a comment here')
                   label.ps-2(for='floatingTextarea') Message

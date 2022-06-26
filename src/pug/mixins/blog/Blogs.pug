@@ -28,7 +28,7 @@ mixin Blogs
     ]
 
   +Section('container').py-2
-    .row
+    .row.g-4
       each blog in blogs
         .col-lg-4.col-md-6.d-flex.justify-content-center
           .card.border-0.mb-3
@@ -40,10 +40,10 @@ mixin Blogs
               .bg-warning.p-2.text-center.opacity-50
                 p.text-white.mb-0=blog.tag
             .mt-4
-              h5=blog.title
-              p.text-200.m-0 By-
+              h5.mb-3=blog.title
+              p.text-200.m-0.mb-3 By - 
                 span.text-300.fw-bold=blog.author
-              p.my-2=blog.excerpt
+              p.mb-3=blog.excerpt
               button.btn.btn-link.text-warning.p-0
                 span.fw-medium Read full article
                 img(src=`${CWD}assets/img/icons/long-arrow.png` alt="arrow icon").ms-3
