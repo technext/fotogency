@@ -10301,7 +10301,7 @@ textarea.form-control-lg {
   background-color: #e6e7e7 !important;
 }
 
-.zIndex-n1 {
+.zIndex--1 {
   z-index: -1 !important;
 }
 
@@ -20607,26 +20607,6 @@ code[class*=language-], pre[class*=language-] {
 }
 .hover-top:hover .heading-color, .hover-top:focus .heading-color {
   color: #fff;
-}
-
-/*-----------------------------------------------
-|   Object fit and Z-index
------------------------------------------------*/
-.fit-cover {
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
-.z-index-1 {
-  z-index: 1 !important;
-}
-
-.z-index-2 {
-  z-index: 2 !important;
-}
-
-.z-index--1 {
-  z-index: -1 !important;
 }
 
 /*-----------------------------------------------
