@@ -30,9 +30,9 @@ mixin Blogs
   +Section('container').py-2
     .row.g-4
       each blog in blogs
-        .col-lg-4.col-md-6.d-flex.justify-content-center
+        .col-lg-4.col-md-6.d-flex
           .card.border-0.mb-3
-            img.card-img-top(src=`${CWD}assets/img/blogs/${blog.image}` alt=blog.title)
+            img.card-img-top(src=`${CWD}assets/img/blogs/${blog.image}` alt="")
             .d-flex.align-items-center.justify-content-between
               .d-flex.align-items-center 
                 span.fa-solid.fa-circle-dot.text-warning
@@ -46,7 +46,7 @@ mixin Blogs
               p.mb-3=blog.excerpt
               button.btn.btn-link.text-warning.p-0
                 span.fw-medium Read full article
-                img(src=`${CWD}assets/img/icons/long-arrow.png` alt="arrow icon").ms-3
+                img(src=`${CWD}assets/img/icons/long-arrow.png` alt="").ms-3
     .row
       .d-flex.align-items-center.justify-content-center.mt-3
         button.btn.btn-link.d-inline-block.text-warning.p-0.fs-1

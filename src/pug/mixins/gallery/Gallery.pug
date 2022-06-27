@@ -61,5 +61,5 @@ mixin Gallery
   +Section.pt-3.pb-6
     .row.g-3
       each image, i in galleryImages
-        div(class=image.class type="button").gallery-item
-          img(src=`${CWD}assets/img/gallery/${image.image}` alt=image.title data-gallery).img-fluid.w-100
+        div(class=image.class).gallery-item
+          img(src=`${CWD}assets/img/gallery/${image.image}` alt="" data-gallery).img-fluid.w-100

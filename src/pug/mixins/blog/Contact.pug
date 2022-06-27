@@ -3,36 +3,36 @@ mixin Contact
     .row.align-items-center
       .my-4.text-center
         h1.text-uppercase.fs-lg-8.fs-6.fw-bolder.text-300.lh-1.position-relative.zIndex-0 Contact
-        h1.d-none.d-md-block.fw-bolder.text-outlined.fs-7.text-white.lh-1.mt-n4.position-relative.zIndex-n1 Get in Touch
+        h1.d-none.d-md-block.fw-bolder.text-outlined.fs-7.text-white.lh-1.mt-n4.position-relative.zIndex--1 Get in Touch
         form.my-5.px-3
           .row.g-3.g-md-5
             .col-md-6
               .card.border-0
                 .form-floating.mb-3
-                  input.form-control.input-box.form-ensurance-header-control#floatingEmail(type='email' placeholder='name@example.com')
+                  input.form-control.form-ensurance-header-control#floatingEmail(type='email' placeholder='name@example.com')
                   label(for='floatingEmail') Email
                 .form-floating.mb-3
-                  input.form-control.input-box.form-ensurance-header-control#floatingName(type='text' placeholder='name')
+                  input.form-control.form-ensurance-header-control#floatingName(type='text' placeholder='name')
                   label(for='floatingName') Your name
                 .form-floating.mb-3
-                  input.form-control.input-box.form-ensurance-header-control#floatingPhone(type='tel' placeholder='name@example.com')
+                  input.form-control.form-ensurance-header-control#floatingPhone(type='tel' placeholder='name@example.com')
                   label(for='floatingPhone') Phone number
                 .form-floating.mb-3
-                  input.form-control.input-box.form-ensurance-header-control#floatingLocation(type='address' placeholder='Desired Location')
+                  input.form-control.form-ensurance-header-control#floatingLocation(type='address' placeholder='Desired Location')
                   label(for='floatingLocation') Desired location
                 .form-floating.mb-3
-                  input.form-control.input-box.form-ensurance-header-control.text-400#floatingDate(type='text' placeholder='Desired Date')
+                  input.form-control.form-ensurance-header-control.text-400#floatingDate(type='text' placeholder='Desired Date')
                   label(for='floatingDate') Desired Date
             .col-md-6
               .card.border-0
                 input.form-control.opacity-0.pe-none.d-none.d-md-block
                 .form-floating.mb-3
-                  textarea.form-control.border.ps-2.input-box.form-ensurance-header-control#floatingTextarea(style="height: 225px" ,placeholder='Leave a comment here')
+                  textarea.form-control.border.ps-2.form-ensurance-header-control#floatingTextarea(style="height: 225px" ,placeholder='Leave a comment here')
                   label.ps-2(for='floatingTextarea') Message
                 .form-floating.mb-3
-                  input.form-control.input-box.form-ensurance-header-control#floatingSource(type='text' placeholder='How did you hear about us?')
+                  input.form-control.form-ensurance-header-control#floatingSource(type='text' placeholder='How did you hear about us?')
                   label(for='floatingSource') How did you hear about us?
             .col-12.text-end.mt-3
               button.btn.btn-link.text-warning.p-0(type='submit')
                 span.fw-bolder.text-uppercase Submit
-                img(src=`${CWD}assets/img/icons/long-arrow.png` alt="arrow icon").ms-3
+                img(src=`${CWD}assets/img/icons/long-arrow.png` alt="").ms-3

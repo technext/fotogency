@@ -36,7 +36,7 @@ mixin Slide(config)
   .swiper-slide
     .row.align-items-stretch.align-items-xl-center
       .col-lg-5
-        img(src=`${CWD}assets/img/exhibitions/${config.image}` alt=config.title).img-fluid.w-100
+        img(src=`${CWD}assets/img/exhibitions/${config.image}` alt="").img-fluid.w-100
         .position-absolute.top-5.start-5.mt-n1.d-flex.flex-column.align-items-center
           span.rounded-circle.bg-white.p-2.d-block
           span.text-white.fw-bold=config.year
@@ -46,7 +46,7 @@ mixin Slide(config)
         p.fs-0=config.desc
         button.btn.btn-link.text-warning.p-0.fs-2
           span.fw-bolder Details 
-          img(src=`${CWD}assets/img/icons/long-arrow.png` alt="arrow icon").ms-3
+          img(src=`${CWD}assets/img/icons/long-arrow.png` alt="").ms-3
 
 
 mixin ExhibitionSlides 

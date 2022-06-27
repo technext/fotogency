@@ -6,21 +6,23 @@ mixin Hero
           span.fw-thin.text-300 deals with first class 
           span.text-400 photography  orphan services.
 
-  +Section.pt-0.mb-md-10.mt-md-n6.zIndex-n1
+  +Section.pt-0.mb-md-10.mt-md-n6.zIndex--1
     .row
-      img.d-none.d-lg-block.col-2.h-50.mt-auto(src=`${CWD}assets/img/home/img2.png` alt="").img-fluid
+      .col-2.d-none.d-lg-block.mt-auto
+        img.h-50(src=`${CWD}assets/img/home/img2.png` alt="").img-fluid
       .col-1.mt-auto.d-none.d-lg-block
         h5.scroll-indicator.text-warning SCROLL 
           span.fas.fa-arrow-down-long
       .col-lg-7.position-relative
         img(src=`${CWD}assets/img/home/img1.png` alt="").img-fluid
-        .position-absolute.bottom-n100.mw-sm.mt-6.d-none.d-md-block
+        .position-absolute.bottom-n100.col-9.mt-6.d-none.d-md-block
           p.fs-2.lh-1.text-400 There are many variations of passages of Lorem Ipsum available, but the majority 
           p.text-300 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,
-        .img-circle.zIndex-1.p-7.rounded-circle
-        .img-circle-2.zIndex-1.p-7.rounded-circle
+        .img-circle.p-7.rounded-circle
+        .img-circle-2.p-7.rounded-circle
         .position-absolute.start-0.bottom-0.d-md-none
           h5.scroll-indicator.text-warning SCROLL 
             span.fas.fa-arrow-down-long
-      img.d-none.d-lg-block.col-2.h-50.mb-auto(src=`${CWD}assets/img/home/img3.png` alt="").img-fluid
+      .col-2.d-none.d-lg-block.mb-auto
+        img.h-50(src=`${CWD}assets/img/home/img3.png` alt="").img-fluid
     

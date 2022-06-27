@@ -1,19 +1,19 @@
 mixin Slide(config)
   .swiper-slide
     .row.align-items-center
-      .col-xl-7.align-items-stretch
+      .col-xl-7
         .position-relative 
           .position-absolute.start-0.bottom-0.ms-3
             h3.text-white #{config.title}
             p.text-300 #{config.subtitle}
-          img.portfolio-img(src=`${CWD}assets/img/portfolio/${config.image}` alt="").img-fluid.w-100
+          img.portfolio-img(src=`${CWD}assets/img/portfolio/${config.image}` alt="").img-fluid
       .col-xl-4.mt-4
         p.fs-0=config.description
 
 
 mixin PortfolioSlides 
   +Section('container-fluid').py-3
-    .position-absolute.w-100.border-dashed-bottom.top-5.zIndex-2
+    .position-absolute.w-100.border-dashed-bottom.mt-4.zIndex-2
     .container
       .row
         .col-lg-12.pb-6.mb-lg-0

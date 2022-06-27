@@ -17,18 +17,21 @@ mixin PreFooter
     var infos = [
       {
         text: '2109 WS 09 Oxford Rd #127 ParkVilla Hills, MI 48334',
-        icon: 'fas fa-map-marker-alt'
+        icon: 'fas fa-map-marker-alt',
+        href: 'https://www.google.com/maps/place/2109+WS+09+Oxford+Rd+%23127+ParkVilla+Hills,+'
       },
       {
         text: '+88 019 76456893',
-        icon: 'fas fa-phone'
+        icon: 'fas fa-phone',
+        href: 'tel:+8801976476893'
       },
       {
         text: 'scrumbledegg@gmail.com',
-        icon: 'fas fa-envelope'
+        icon: 'fas fa-envelope',
+        href: 'mailto:scrscrumbledegg@gmail.com'
       }
     ]
-  
+
   - 
     var socials = [
       {
@@ -61,21 +64,22 @@ mixin PreFooter
     .row.g-6.g-md-0
       .col-md-6 
         .mb-4.d-inline-block
-          a.navbar-brand.pt-0.text-white.d-flex.align-items-center(href=`${CWD}index.html`)
-            img(src=`${CWD}assets/img/icons/dark-logo-icon.png` alt="logo icon" width="25px" height="25px" ).img-fluid
-            span.fs-3.fw-bolder.ms-2 Foto
-            span.fw-thin.fs-3 gency
+          a.navbar-brand.pt-0.fs-3.text-white.d-flex.align-items-center(href=`${CWD}index.html`)
+            img(src=`${CWD}assets/img/icons/dark-logo-icon.png` alt="" width="25px" height="25px" ).img-fluid
+            span.fw-bolder.ms-2 Foto
+            span.fw-thin gency
         each info in infos
-          .col-7.text-300.py-2
+          .col-7.text-300.mb-3
             i(class=info.icon)
-            span.ms-2=info.text
+            a(href=info.href).nav-link.text-300.d-inline=info.text
+
       .col-md-6
         h5.text-white SUBSCRIBE TO OUR NEWSLETTER
         .form-floating.mb-6.position-relative.text-200
           input.form-control.bg-transparent.border-0.rounded-0.border.border-bottom.border-400.form-control#floatingEmail(type='email' placeholder='name@example.com')
           label.text-400(for='floatingEmail') Email
           .position-absolute.end-0.top-50
-            img(src=`${CWD}assets/img/icons/long-arrow.png` alt="arrow icon").ms-3
+            img(src=`${CWD}assets/img/icons/long-arrow.png` alt="").ms-3
         .col.d-flex.flex-wrap.justify-content-between.align-items-center
           each social in socials
             a.social-icons(href=social.link target='_blank')=social.text
