@@ -43,7 +43,7 @@
       <nav class="navbar navbar-light py-3 overflow-hidden">
         <div class="container px-0 px-md-3">
           <div class="row w-100">
-            <div class="col-8"><a class="navbar-brand pt-0 text-black d-flex align-items-center" href="index.html"><img class="img-fluid" src="assets/img/icons/logo-icon.png" alt="logo icon" /><span class="fs-3 fw-bolder ms-2">Foto</span><span class="fw-thin fs-3">gency</span></a></div>
+            <div class="col-8"><a class="navbar-brand pt-0 fs-3 text-black d-flex align-items-center" href="index.html"><img class="img-fluid" src="assets/img/icons/logo-icon.png" alt="" /><span class="fw-bolder ms-2">Foto</span><span class="fw-thin">gency</span></a></div>
             <div class="col-4 d-lg-none text-end">
               <div class="text-black fs-2 d-inline-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle offcanvas navigation"><span class="menu-bar"></span></div>
             </div>
@@ -66,7 +66,7 @@
             </div>
             <div class="col-4">
               <div class="d-none d-lg-flex justify-content-end position-relative zIndex-1">
-                <div class="position-absolute absolute-centered zIndex-n1">
+                <div class="position-absolute absolute-centered zIndex--1">
                   <h1 class="ms-2 fw-bolder text-outlined text-uppercase text-white pe-none fs-8">Home</h1>
                 </div>
                 <div class="d-flex gap-3 align-items-start"><a class="mb-0 ms-auto text-warning fs-0 fw-bold text-uppercase" href="blog.html#contact">Contact Now</a>
@@ -102,23 +102,25 @@
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
-      <section class="pt-0 mb-md-10 mt-md-n6 zIndex-n1">
+      <section class="pt-0 mb-md-10 mt-md-n6 zIndex--1">
         <div class="container">
-          <div class="row"><img class="d-none d-lg-block col-2 h-50 mt-auto img-fluid" src="assets/img/home/img2.png" alt="" />
+          <div class="row">
+            <div class="col-2 d-none d-lg-block mt-auto"><img class="h-50 img-fluid" src="assets/img/home/img2.png" alt="" /></div>
             <div class="col-1 mt-auto d-none d-lg-block">
               <h5 class="scroll-indicator text-warning">SCROLL <span class="fas fa-arrow-down-long"></span></h5>
             </div>
             <div class="col-lg-7 position-relative"><img class="img-fluid" src="assets/img/home/img1.png" alt="" />
-              <div class="position-absolute bottom-n100 mw-sm mt-6 d-none d-md-block">
+              <div class="position-absolute bottom-n100 col-9 mt-6 d-none d-md-block">
                 <p class="fs-2 lh-1 text-400">There are many variations of passages of Lorem Ipsum available, but the majority </p>
                 <p class="text-300">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,</p>
               </div>
-              <div class="img-circle zIndex-1 p-7 rounded-circle"></div>
-              <div class="img-circle-2 zIndex-1 p-7 rounded-circle"></div>
+              <div class="img-circle p-7 rounded-circle"></div>
+              <div class="img-circle-2 p-7 rounded-circle"></div>
               <div class="position-absolute start-0 bottom-0 d-md-none">
                 <h5 class="scroll-indicator text-warning">SCROLL <span class="fas fa-arrow-down-long"></span></h5>
               </div>
-            </div><img class="d-none d-lg-block col-2 h-50 mb-auto img-fluid" src="assets/img/home/img3.png" alt="" />
+            </div>
+            <div class="col-2 d-none d-lg-block mb-auto"><img class="h-50 img-fluid" src="assets/img/home/img3.png" alt="" /></div>
           </div>
         </div><!-- end of .container-->
       </section><!-- <section> close ============================-->
@@ -136,15 +138,15 @@
       <div class="container">
         <div class="row g-6 g-md-0">
           <div class="col-md-6">
-            <div class="mb-4 d-inline-block"><a class="navbar-brand pt-0 text-white d-flex align-items-center" href="index.html"><img class="img-fluid" src="assets/img/icons/dark-logo-icon.png" alt="logo icon" width="25px" height="25px" /><span class="fs-3 fw-bolder ms-2">Foto</span><span class="fw-thin fs-3">gency</span></a></div>
-            <div class="col-7 text-300 py-2"><i class="fas fa-map-marker-alt"></i><span class="ms-2">2109 WS 09 Oxford Rd #127 ParkVilla Hills, MI 48334</span></div>
-            <div class="col-7 text-300 py-2"><i class="fas fa-phone"></i><span class="ms-2">+88 019 76456893</span></div>
-            <div class="col-7 text-300 py-2"><i class="fas fa-envelope"></i><span class="ms-2">scrumbledegg@gmail.com</span></div>
+            <div class="mb-4 d-inline-block"><a class="navbar-brand pt-0 fs-3 text-white d-flex align-items-center" href="index.html"><img class="img-fluid" src="assets/img/icons/dark-logo-icon.png" alt="" width="25px" height="25px" /><span class="fw-bolder ms-2">Foto</span><span class="fw-thin">gency</span></a></div>
+            <div class="col-7 text-300 mb-3"><i class="fas fa-map-marker-alt"></i><a class="nav-link text-300 d-inline" href="https://www.google.com/maps/place/2109+WS+09+Oxford+Rd+%23127+ParkVilla+Hills,+">2109 WS 09 Oxford Rd #127 ParkVilla Hills, MI 48334</a></div>
+            <div class="col-7 text-300 mb-3"><i class="fas fa-phone"></i><a class="nav-link text-300 d-inline" href="tel:+8801976476893">+88 019 76456893</a></div>
+            <div class="col-7 text-300 mb-3"><i class="fas fa-envelope"></i><a class="nav-link text-300 d-inline" href="mailto:scrscrumbledegg@gmail.com">scrumbledegg@gmail.com</a></div>
           </div>
           <div class="col-md-6">
             <h5 class="text-white">SUBSCRIBE TO OUR NEWSLETTER</h5>
             <div class="form-floating mb-6 position-relative text-200"><input class="form-control bg-transparent border-0 rounded-0 border border-bottom border-400 form-control" id="floatingEmail" type="email" placeholder="name@example.com" /><label class="text-400" for="floatingEmail">Email</label>
-              <div class="position-absolute end-0 top-50"><img class="ms-3" src="assets/img/icons/long-arrow.png" alt="arrow icon" /></div>
+              <div class="position-absolute end-0 top-50"><img class="ms-3" src="assets/img/icons/long-arrow.png" alt="" /></div>
             </div>
             <div class="col d-flex flex-wrap justify-content-between align-items-center"><a class="social-icons" href="https://www.facebook.com/" target="_blank">Facebook</a><a class="social-icons" href="https://www.flickr.com/photos/" target="_blank">Flickr</a><a class="social-icons" href="https://twitter.com/" target="_blank">Twitter</a><a class="social-icons" href="https://www.instagram.com/" target="_blank">Instagram</a><a class="social-icons" href="https://www.youtube.com/" target="_blank">Youtube</a></div>
           </div>
