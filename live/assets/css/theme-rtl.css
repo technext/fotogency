@@ -20723,7 +20723,7 @@ code[class*=language-], pre[class*=language-] {
 }
 
 .text-outlined {
-  -webkit-text-stroke: var(--fg-100) 0.5px;
+  -webkit-text-stroke: var(--fg-200) 0.3px;
   font-weight: bold !important;
 }
 
@@ -21004,6 +21004,10 @@ code[class*=language-], pre[class*=language-] {
 .swiper-theme .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
   -webkit-animation: swiperNavAnimate 5s;
   animation: swiperNavAnimate 5s;
+}
+
+.swiper-slide-prev {
+  opacity: 0.25;
 }
 
 /*-----------------------------------------------
