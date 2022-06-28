@@ -10324,23 +10324,23 @@ textarea.form-control-lg {
   background-color: #e6e7e7 !important;
 }
 
-.zIndex--1 {
+.z-index--1 {
   z-index: -1 !important;
 }
 
-.zIndex-0 {
+.z-index-0 {
   z-index: 0 !important;
 }
 
-.zIndex-1 {
+.z-index-1 {
   z-index: 1 !important;
 }
 
-.zIndex-2 {
+.z-index-2 {
   z-index: 2 !important;
 }
 
-.zIndex-3 {
+.z-index-3 {
   z-index: 3 !important;
 }
 
@@ -20087,7 +20087,7 @@ ul {
 /*-----------------------------------------------
 |   Navigation bar
 -----------------------------------------------*/
-.navbar-nav {
+.navbar-fotogency {
   font-weight: 400;
   font-size: 1rem;
   letter-spacing: 0.01em;
@@ -20095,12 +20095,12 @@ ul {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.navbar-nav .nav-link.active-nav {
+.navbar-fotogency .nav-link.active {
   color: #000 !important;
   position: relative;
   font-weight: 700;
 }
-.navbar-nav .nav-link.active-nav:before {
+.navbar-fotogency .nav-link.active:before {
   position: absolute;
   content: "";
   height: 1px;
@@ -20358,6 +20358,10 @@ ul {
   min-height: 19rem;
 }
 
+.chrome .btn-close {
+  background-clip: unset;
+}
+
 /*-----------------------------------------------
 |   Button
 -----------------------------------------------*/
@@ -20379,45 +20383,6 @@ ul {
 
 .btn-success, .btn-info {
   color: #fff;
-}
-
-.btn-primary {
-  color: #384345;
-}
-
-.btn-ensurance {
-  position: relative;
-  border-radius: 30px;
-  height: 60px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-  width: 60px;
-  -webkit-transition: width 0.4s;
-  -o-transition: width 0.4s;
-  transition: width 0.4s;
-}
-.btn-ensurance:hover, .btn-ensurance:focus {
-  width: 210px;
-  color: #fff;
-  background-color: #000;
-  border-color: #000;
-}
-.btn-ensurance .btn-icon {
-  font-size: 10px;
-  margin-left: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.btn-ensurance .btn-text {
-  position: absolute;
-  white-space: nowrap;
-  left: 58px;
 }
 
 /*-----------------------------------------------
@@ -20788,7 +20753,7 @@ code[class*=language-], pre[class*=language-] {
 .menu-bar {
   position: relative;
   display: inline-block;
-  width: 30px;
+  width: 2.5rem;
   height: 1px;
   background-color: var(--fg-400);
   margin-bottom: 10px;
@@ -20809,7 +20774,7 @@ code[class*=language-], pre[class*=language-] {
 .menu-close-bar {
   position: relative;
   display: inline-block;
-  width: 30px;
+  width: 2.5rem;
   height: 1px;
   background-color: var(--fg-400);
   -webkit-transform: rotate(45deg);
@@ -20837,7 +20802,7 @@ code[class*=language-], pre[class*=language-] {
 }
 
 .portfolio-img {
-  min-height: 300px;
+  min-height: 18.5rem;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -20862,8 +20827,8 @@ code[class*=language-], pre[class*=language-] {
 
 .img-circle-2 {
   position: absolute;
-  bottom: -40px;
-  right: -40px;
+  bottom: -2.5rem;
+  right: -2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   -webkit-backdrop-filter: blur(5px);
@@ -20909,24 +20874,6 @@ code[class*=language-], pre[class*=language-] {
   text-align: center;
   font-weight: bold !important;
   font-size: 1.2rem !important;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                 Google Map                                 */
-/* -------------------------------------------------------------------------- */
-.googlemap .gm-style-iw.gm-style-iw-c {
-  -webkit-box-shadow: var(--fg-box-shadow) !important;
-  box-shadow: var(--fg-box-shadow) !important;
-  padding: 1rem !important;
-}
-.googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
-  margin-top: 1rem !important;
-  margin-right: 0.5rem !important;
-}
-
-html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
-  left: unset !important;
-  right: 0 !important;
 }
 
 .theme-slider .swiper-nav {
@@ -21080,57 +21027,6 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 .swiper-theme .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
   -webkit-animation: swiperNavAnimate 5s;
   animation: swiperNavAnimate 5s;
-}
-
-/*-----------------------------------------------
-|   Isotope
------------------------------------------------*/
-.sortable .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: #5B7075;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.8333333333rem;
-  letter-spacing: 0.02rem;
-}
-.sortable .menu .isotope-nav {
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  margin-bottom: 0.5rem;
-  border: 1px solid transparent;
-  border-radius: 0.5rem;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  margin-right: 0.25rem;
-}
-.sortable .menu .isotope-nav:last-child {
-  margin-right: 0;
-}
-.sortable .menu .isotope-nav.active {
-  background: -o-linear-gradient(138.25deg, rgba(116, 30, 255, 0.1) -18.72%, rgba(255, 55, 187, 0.1) 120.42%);
-  background: linear-gradient(311.75deg, rgba(116, 30, 255, 0.1) -18.72%, rgba(255, 55, 187, 0.1) 120.42%);
-  color: #186BE8;
-}
-
-[data-bp] {
-  cursor: -webkit-zoom-in;
-  cursor: zoom-in;
-}
-
-#bp_container {
-  z-index: 11000 !important;
-}
-#bp_container img {
-  border-radius: 5px;
-}
-#bp_container svg {
-  height: 3rem;
 }
 
 /*-----------------------------------------------
@@ -22107,93 +22003,6 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
   text-decoration: none;
 }
 
-.icon-box {
-  border-radius: 50%;
-  height: 70%;
-  width: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: column;
-  flex-flow: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #224E8F;
-  margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.icon-box .car-insurance-icon-hover {
-  display: none !important;
-}
-.icon-box .car-insurance-icon {
-  width: 40px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.icon-box:hover {
-  background-color: #186BE8;
-}
-.icon-box:hover .car-insurance-icon {
-  display: none !important;
-}
-.icon-box:hover .car-insurance-icon-hover {
-  display: block !important;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 960px) {
-  .icon-box {
-    height: 100%;
-    width: 100%;
-  }
-  .icon-box .car-insurance-icon {
-    width: 60px;
-  }
-}
-.circle-hover-wrapper {
-  position: relative;
-  z-index: 999;
-  height: 100px;
-  width: 100px;
-  padding: 0;
-}
-.circle-hover-wrapper:hover {
-  z-index: 800;
-}
-.circle-hover-wrapper:hover::before {
-  position: absolute;
-  content: "";
-  height: 80%;
-  width: 80%;
-  border: 1px solid #5EDCD4;
-  border-radius: 50%;
-  -webkit-transform: translate(10px, -5px);
-  -ms-transform: translate(10px, -5px);
-  transform: translate(10px, -5px);
-  pointer-events: none;
-  opacity: 0.7;
-}
-@media (min-width: 960px) {
-  .circle-hover-wrapper:hover {
-    z-index: 800;
-  }
-  .circle-hover-wrapper:hover::before {
-    height: 100%;
-    width: 100%;
-    -webkit-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(2);
-  }
-}
-
 .widget-list {
   margin: 0;
   padding: 0;
@@ -22223,8 +22032,8 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 }
 
 .cursor-outer {
-  width: 45px;
-  height: 45px;
+  width: 2.8rem;
+  height: 2.8rem;
   border-radius: 100%;
   border: 1px solid #F59300;
   background-color: rgba(245, 147, 0, 0);
@@ -22244,29 +22053,10 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 }
 .cursor-outer.link-hover {
   background-color: transparent;
-  width: 65px;
-  height: 65px;
+  width: 3.8rem;
+  height: 3.8rem;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   background-blend-mode: color-burn;
-}
-
-.cursor-inner {
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  background-color: #F59300;
-  position: fixed;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 99999;
-  -webkit-transition: width 0.3s, height 0.3s, opacity 0.3s;
-  -o-transition: width 0.3s, height 0.3s, opacity 0.3s;
-  transition: width 0.3s, height 0.3s, opacity 0.3s;
-}
-.cursor-inner.link-hover {
-  display: none;
 }
 /*# sourceMappingURL=theme.css.map */
