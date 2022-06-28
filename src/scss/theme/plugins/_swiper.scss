@@ -116,6 +116,10 @@
     animation: swiperNavAnimate 5s;
   }
 }
+.swiper-slide {
+  transition: opacity 0.4s ease-in-out;
+}
+
 .swiper-slide-next {
-  opacity: .25;
+  opacity: .50;
 }
