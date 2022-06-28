@@ -32,10 +32,11 @@ mixin Navbar({pageTitle, pageSubtitle})
     .container.px-0.px-md-3
       .row.w-100.g-0.justify-content-between
         .col-8
-          a.navbar-brand.pt-0.fs-3.text-black.d-flex.align-items-center(href=`${CWD}index.html`)
-            img(src=`${CWD}assets/img/icons/logo-icon.png` alt="").img-fluid
-            span.fw-bolder.ms-2 Foto
-            span.fw-thin gency
+          .d-inline-block
+            a.navbar-brand.pt-0.fs-3.text-black.d-flex.align-items-center(href=`${CWD}index.html`)
+              img(src=`${CWD}assets/img/icons/logo-icon.png` alt="").img-fluid
+              span.fw-bolder.ms-2 Foto
+              span.fw-thin gency
 
           if pageTitle != 'Home'
             .mt-4.d-none.d-lg-block
