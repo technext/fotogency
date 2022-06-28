@@ -11,7 +11,8 @@
     "publish": "git subtree push --prefix live origin gh-pages",
     "publish:force": "cross-var git push origin `git subtree split --prefix live $npm_package_version`:gh-pages --force",
     "publish:f": "git push origin `git subtree split --prefix live main`:gh-pages --force",
-    "localhost": "ssh -R 80:localhost:3000 ssh.localhost.run"
+    "localhost": "ssh -R 80:localhost:3000 ssh.localhost.run",
+    "deploy": "gh-pages -d live"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +32,7 @@
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-prettier": "^3.4.0",
-    "gh-pages": "^3.2.0",
+    "gh-pages": "^3.2.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
