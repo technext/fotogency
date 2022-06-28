@@ -202,21 +202,21 @@ $headings-font-weight: $font-weight-bold !default;
 $headings-color: var(--#{$variable-prefix}headings-color) !default;
 
 // scss-docs-start display-headings
-$display-font-sizes: () !default;
-$display-font-sizes: map-merge(
-  (
-    1: map_get($font-sizes, 8),
-    2: map_get($font-sizes, 7),
-    3: map_get($font-sizes, 6),
-    4: map_get($font-sizes, 5),
-    5: map_get($font-sizes, 4),
-    6: map_get($font-sizes, 3),
-  ),
-  $display-font-sizes
-);
+// $display-font-sizes: () !default;
+// $display-font-sizes: map-merge(
+//   (
+//     1: map_get($font-sizes, 8),
+//     2: map_get($font-sizes, 7),
+//     3: map_get($font-sizes, 6),
+//     4: map_get($font-sizes, 5),
+//     5: map_get($font-sizes, 4),
+//     6: map_get($font-sizes, 3),
+//   ),
+//   $display-font-sizes
+// );
 
-$display-font-weight: $font-weight-black !default;
-$display-line-height: 1 !default;
+// $display-font-weight: $font-weight-black !default;
+// $display-line-height: 1 !default;
 // scss-docs-end display-headings
 
 $lead-font-size: $font-size-lg !default;
