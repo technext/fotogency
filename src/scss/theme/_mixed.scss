@@ -146,7 +146,7 @@
 .menu-bar {
   position: relative;
   display: inline-block;
-  width: 30px;
+  width: 2.5rem;
   height: 1px;
   background-color: var(--#{$variable-prefix}400);
   margin-bottom: 10px;
@@ -165,7 +165,7 @@
 .menu-close-bar {
   position: relative;
   display: inline-block;
-  width: 30px;
+  width: 2.5rem;
   height: 1px;
   background-color: var(--#{$variable-prefix}400);
   transform: rotate(45deg);
@@ -187,7 +187,7 @@
 }
 
 .portfolio-img {
-  min-height: 300px;
+  min-height: 18.5rem;
   object-fit: cover;
 }
 
@@ -206,8 +206,8 @@
 }
 .img-circle-2 {
   position: absolute;
-  bottom: -40px;
-  right: -40px;
+  bottom: -2.5rem;
+  right: -2.5rem;
   border: 1px solid rgba($white, 0.1);
   border-radius: 50%;
   backdrop-filter: blur(5px);

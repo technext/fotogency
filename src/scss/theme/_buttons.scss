@@ -11,37 +11,3 @@
 .btn-success, .btn-info{
   color: $white;
 }
-
-.btn-primary{
-  color: $gray-1000;
-}
-
-.btn-ensurance{
-  position: relative;
-  border-radius: 30px;
-  height: 60px;
-  display: inline-flex;
-  align-items: center;
-  overflow:hidden;
-  width: 60px; 
-  transition: width 0.4s;
-  &:hover,&:focus{
-    width: 210px;
-    color: $white;
-    background-color: $black;
-    border-color: $black;
-  }
-  .btn-icon {
-    font-size: 10px;
-    margin-left: auto;
-    display: flex;
-  }
-  
-  .btn-text {
-    position: absolute;
-    white-space: nowrap;
-    left: 58px;
-  }
-}
-
-

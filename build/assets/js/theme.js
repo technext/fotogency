@@ -342,31 +342,27 @@ var DomNode = /*#__PURE__*/function () {
   return DomNode;
 }();
 
-var cursor = document.querySelector('.cursor-outer'); // const cursorinner = document.querySelector('.cursor-inner');
-
-var targets = document.querySelectorAll(['a', '.btn', "[type='button']", 'input', 'textarea']);
-document.addEventListener('mousemove', function (e) {
-  cursor.style.transform = "translate3d(calc(".concat(e.clientX, "px - 50%), calc(").concat(e.clientY, "px - 50%), 0)");
-}); // document.addEventListener('mousemove', (e) => {
-//   const x = e.clientX;
-//   const y = e.clientY;
-//   cursorinner.style.left = `${x}px`;
-//   cursorinner.style.top = `${y}px`;
-// });
-
-targets.forEach(function (item) {
-  item.addEventListener('mouseover', function () {
-    cursor.classList.add('link-hover'); // cursorinner.classList.add('link-hover');
+var cursorInit = function cursorInit() {
+  var cursor = document.querySelector('.cursor-outer');
+  var targets = document.querySelectorAll(['a', '.btn', "[type='button']", 'input', 'textarea']);
+  document.addEventListener('mousemove', function (e) {
+    cursor.style.transform = "translate3d(calc(".concat(e.clientX, "px - 50%), calc(").concat(e.clientY, "px - 50%), 0)");
   });
-  item.addEventListener('mouseleave', function () {
-    cursor.classList.remove('link-hover'); // cursorinner.classList.remove('link-hover');
+  targets.forEach(function (item) {
+    item.addEventListener('mouseover', function () {
+      cursor.classList.add('link-hover');
+    });
+    item.addEventListener('mouseleave', function () {
+      cursor.classList.remove('link-hover');
+    });
   });
-});
+};
 /* -------------------------------------------------------------------------- */
 
 /*                                 Glightbox                                */
 
 /* -------------------------------------------------------------------------- */
+
 
 var glightboxInit = function glightboxInit() {
   if (window.GLightbox) {
@@ -374,18 +370,7 @@ var glightboxInit = function glightboxInit() {
       selector: '[data-gallery]'
     });
   }
-}; // import Swiper from 'swiper';
-// const swiperInit = () =>
-//   new Swiper('.swiper-theme', {
-//     slidesPerView: 1.2,
-//     spaceBetween: 30,
-//     pagination: {
-//       el: '.swiper-pagination',
-//       clickable: true,
-//     },
-//   });
-// export default swiperInit;
-
+};
 /*-----------------------------------------------
 |  Swiper
 -----------------------------------------------*/
@@ -447,5 +432,5 @@ var swiperInit = function swiperInit() {
 docReady(detectorInit);
 docReady(swiperInit);
 docReady(glightboxInit);
-docReady(cursor);
+docReady(cursorInit);
 //# sourceMappingURL=theme.js.map

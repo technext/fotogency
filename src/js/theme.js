@@ -2,7 +2,7 @@ import { docReady } from './utils';
 import detectorInit from './detector';
 import swiperInit from './swiper';
 import glightboxInit from './glightbox';
-import cursor from './cursor';
+import cursorInit from './cursor';
 
 /* -------------------------------------------------------------------------- */
 /*                            Theme Initialization                            */
@@ -10,4 +10,4 @@ import cursor from './cursor';
 docReady(detectorInit);
 docReady(swiperInit);
 docReady(glightboxInit);
-docReady(cursor);
+docReady(cursorInit);

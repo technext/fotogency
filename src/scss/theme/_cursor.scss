@@ -1,7 +1,7 @@
 
 .cursor-outer {
-  width: 45px;
-  height: 45px;
+  width: 2.8rem;
+  height: 2.8rem;
   border-radius: 100%;
   border: 1px solid $warning;
   background-color: rgba($warning, 0.0);
@@ -16,25 +16,9 @@
   
   &.link-hover {
       background-color: transparent;
-      width: 65px;
-      height: 65px;
+      width: 3.8rem;
+      height: 3.8rem;
       backdrop-filter: none;
       background-blend-mode: color-burn;
-  }
-}
-
-.cursor-inner {
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  background-color: $warning;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 99999;
-  transition: width .3s, height .3s, opacity .3s;
-
-  &.link-hover {
-    display: none;
   }
 }

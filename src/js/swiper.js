@@ -1,16 +1,3 @@
-// import Swiper from 'swiper';
-
-// const swiperInit = () =>
-//   new Swiper('.swiper-theme', {
-//     slidesPerView: 1.2,
-//     spaceBetween: 30,
-//     pagination: {
-//       el: '.swiper-pagination',
-//       clickable: true,
-//     },
-//   });
-
-// export default swiperInit;
 import utils from './utils';
 
 /*-----------------------------------------------
