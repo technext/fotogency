@@ -21029,8 +21029,14 @@ code[class*=language-], pre[class*=language-] {
   animation: swiperNavAnimate 5s;
 }
 
+.swiper-slide {
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
 .swiper-slide-next {
-  opacity: 0.25;
+  opacity: 0.5;
 }
 
 /*-----------------------------------------------
