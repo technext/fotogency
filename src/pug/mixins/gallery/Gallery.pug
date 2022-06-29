@@ -62,4 +62,4 @@ mixin Gallery
     .row.g-3
       each image, i in galleryImages
         div(class=image.class).gallery-item
-          img(src=`${CWD}assets/img/gallery/${image.image}` alt=image.title data-gallery).img-fluid.w-100
+          img(src=`${CWD}assets/img/gallery/${image.image}` alt="" data-glightbox=`title: ${image.title}; description: ${image.description}`).img-fluid.w-100

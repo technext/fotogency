@@ -8,18 +8,25 @@
 .gscrollbar-fixer{
   margin-right: 0 !important;
 }
-[data-gallery] {
+[data-glightbox] {
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
 .glightbox-clean {
   .gslide-description {
     background: transparent !important;
-  }
-  .gslide-title {
-    color: #fff !important;
-    text-align: center;
-    font-weight: bold !important;
-    font-size: 1.2rem !important;
+    .gdesc-inner {
+      text-align: center;
+    }
+    .gslide-title {
+      color: #fff !important;
+      margin-bottom: 0 !important;
+      text-align: center;
+      font-weight: bold !important;
+      font-size: 1.2rem !important;
+    }
+    .gslide-desc {
+      color: var(--#{$variable-prefix}300);
+    }
   }
 }
