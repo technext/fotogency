@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const { argv } = require('yargs');
-const w3cjs = require('gulp-w3cjs');
-const through2 = require('through2');
+const validator = require('gulp-html');
+const through = require('through2');
 const ansi = require('ansi');
 
 const { paths, baseDir } = require('./utils');
@@ -11,7 +11,7 @@ const cursor = ansi(process.stdout);
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 |   w3c validation for HTML
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
-gulp.task('w3cjs', (done) => {
+gulp.task('validation', () => {
   let htmlfiles = `${baseDir}/${paths.pug.dest}/**/*.html`;
   if (argv.html) {
     htmlfiles = `${paths.dir.dev}/${argv.html}.html`;
@@ -22,20 +22,17 @@ gulp.task('w3cjs', (done) => {
 
   return gulp
     .src(htmlfiles)
-    .pipe(w3cjs())
+    .pipe(validator())
     .pipe(
-      through2.obj((file, enc, cb) => {
+      through.obj((file, enc, cb) => {
         console.log({
-          url: file.history[0],
-          ...(!file.w3cjs.success ? { ...file.w3cjs } : {}),
+          file: file.path.split('\\').pop(),
+          status: 'success',
         });
-        cb();
+        cb(null, file);
       })
     )
-    .pipe(w3cjs.reporter())
-    .on('end', () => {
-      done();
-    });
+    .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('w3c', gulp.series('pug', 'w3cjs'));
+gulp.task('w3c', gulp.series('pug', 'validation'));
