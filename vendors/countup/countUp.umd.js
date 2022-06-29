@@ -1,8 +1,8 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = global || self, factory(global.countUp = {}));
-}(this, (function (exports) { 'use strict';
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.countUp = {}));
+})(this, (function (exports) { 'use strict';
 
     var __assign = (undefined && undefined.__assign) || function () {
         __assign = Object.assign || function(t) {
@@ -19,10 +19,9 @@
     var CountUp = /** @class */ (function () {
         function CountUp(target, endVal, options) {
             var _this = this;
-            this.target = target;
             this.endVal = endVal;
             this.options = options;
-            this.version = '2.0.7';
+            this.version = '2.3.0';
             this.defaults = {
                 startVal: 0,
                 decimalPlaces: 0,
@@ -34,7 +33,10 @@
                 separator: ',',
                 decimal: '.',
                 prefix: '',
-                suffix: ''
+                suffix: '',
+                enableScrollSpy: false,
+                scrollSpyDelay: 200,
+                scrollSpyOnce: false,
             };
             this.finalEndVal = null; // for smart easing
             this.useEasing = true;
@@ -42,6 +44,7 @@
             this.error = '';
             this.startVal = 0;
             this.paused = true;
+            this.once = false;
             this.count = function (timestamp) {
                 if (!_this.startTime) {
                     _this.startTime = timestamp;
@@ -93,10 +96,10 @@
             // default format and easing functions
             this.formatNumber = function (num) {
                 var neg = (num < 0) ? '-' : '';
-                var result, x, x1, x2, x3;
+                var result, x1, x2, x3;
                 result = Math.abs(num).toFixed(_this.options.decimalPlaces);
                 result += '';
-                x = result.split('.');
+                var x = result.split('.');
                 x1 = x[0];
                 x2 = x.length > 1 ? _this.options.decimal + x[1] : '';
                 if (_this.options.useGrouping) {
@@ -127,7 +130,7 @@
             this.startVal = this.validateValue(this.options.startVal);
             this.frameVal = this.startVal;
             this.endVal = this.validateValue(endVal);
-            this.options.decimalPlaces = Math.max( this.options.decimalPlaces);
+            this.options.decimalPlaces = Math.max(this.options.decimalPlaces);
             this.resetDuration();
             this.options.separator = String(this.options.separator);
             this.useEasing = this.options.useEasing;
@@ -141,7 +144,40 @@
             else {
                 this.error = '[CountUp] target is null or undefined';
             }
+            // scroll spy
+            if (window !== undefined && this.options.enableScrollSpy) {
+                if (!this.error) {
+                    // set up global array of onscroll functions
+                    window['onScrollFns'] = window['onScrollFns'] || [];
+                    window['onScrollFns'].push(function () { return _this.handleScroll(_this); });
+                    window.onscroll = function () {
+                        window['onScrollFns'].forEach(function (fn) { return fn(); });
+                    };
+                    this.handleScroll(this);
+                }
+                else {
+                    console.error(this.error, target);
+                }
+            }
         }
+        CountUp.prototype.handleScroll = function (self) {
+            if (!self || !window || self.once)
+                return;
+            var bottomOfScroll = window.innerHeight + window.scrollY;
+            var rect = self.el.getBoundingClientRect();
+            var bottomOfEl = rect.top + rect.height + window.pageYOffset;
+            if (bottomOfEl < bottomOfScroll && bottomOfEl > window.scrollY && self.paused) {
+                // in view
+                self.paused = false;
+                setTimeout(function () { return self.start(); }, self.options.scrollSpyDelay);
+                if (self.options.scrollSpyOnce)
+                    self.once = true;
+            }
+            else if (window.scrollY > bottomOfEl && !self.paused) {
+                // scrolled past
+                self.reset();
+            }
+        };
         // determines where easing starts and whether to count down or up
         CountUp.prototype.determineDirectionAndSmartEasing = function () {
             var end = (this.finalEndVal) ? this.finalEndVal : this.endVal;
@@ -237,7 +273,7 @@
         CountUp.prototype.validateValue = function (value) {
             var newValue = Number(value);
             if (!this.ensureNumber(newValue)) {
-                this.error = "[CountUp] invalid start or end value: " + value;
+                this.error = "[CountUp] invalid start or end value: ".concat(value);
                 return null;
             }
             else {
@@ -256,4 +292,4 @@
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));
