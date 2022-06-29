@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const { argv } = require('yargs');
 const w3cjs = require('gulp-w3cjs');
-const through = require('through2');
+const through2 = require('through2');
 const ansi = require('ansi');
 
 const { paths, baseDir } = require('./utils');
@@ -24,7 +24,7 @@ gulp.task('w3cjs', (done) => {
     .src(htmlfiles)
     .pipe(w3cjs())
     .pipe(
-      through.obj((file, enc, cb) => {
+      through2.obj((file, enc, cb) => {
         console.log({
           url: file.history[0],
           ...(!file.w3cjs.success ? { ...file.w3cjs } : {}),

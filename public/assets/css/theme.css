@@ -7568,7 +7568,6 @@ textarea.form-control-lg {
 }
 
 .sticky-top {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1015;
@@ -7576,7 +7575,6 @@ textarea.form-control-lg {
 
 @media (min-width: 540px) {
   .sticky-sm-top {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1015;
@@ -7584,7 +7582,6 @@ textarea.form-control-lg {
 }
 @media (min-width: 720px) {
   .sticky-md-top {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1015;
@@ -7592,7 +7589,6 @@ textarea.form-control-lg {
 }
 @media (min-width: 960px) {
   .sticky-lg-top {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1015;
@@ -7600,7 +7596,6 @@ textarea.form-control-lg {
 }
 @media (min-width: 1140px) {
   .sticky-xl-top {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1015;
@@ -7608,7 +7603,6 @@ textarea.form-control-lg {
 }
 @media (min-width: 1440px) {
   .sticky-xxl-top {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1015;
@@ -7801,7 +7795,6 @@ textarea.form-control-lg {
 }
 
 .position-sticky {
-  position: -webkit-sticky !important;
   position: sticky !important;
 }
 
@@ -10442,7 +10435,6 @@ textarea.form-control-lg {
   }
 
   .position-sm-sticky {
-    position: -webkit-sticky !important;
     position: sticky !important;
   }
 
@@ -12360,7 +12352,6 @@ textarea.form-control-lg {
   }
 
   .position-md-sticky {
-    position: -webkit-sticky !important;
     position: sticky !important;
   }
 
@@ -14278,7 +14269,6 @@ textarea.form-control-lg {
   }
 
   .position-lg-sticky {
-    position: -webkit-sticky !important;
     position: sticky !important;
   }
 
@@ -16196,7 +16186,6 @@ textarea.form-control-lg {
   }
 
   .position-xl-sticky {
-    position: -webkit-sticky !important;
     position: sticky !important;
   }
 
@@ -18114,7 +18103,6 @@ textarea.form-control-lg {
   }
 
   .position-xxl-sticky {
-    position: -webkit-sticky !important;
     position: sticky !important;
   }
 
@@ -20811,7 +20799,6 @@ code[class*=language-], pre[class*=language-] {
   -webkit-writing-mode: vertical-lr;
   -ms-writing-mode: tb-lr;
   writing-mode: vertical-lr;
-  -webkit-text-orientation: mixed;
   text-orientation: mixed;
 }
 
@@ -21178,7 +21165,6 @@ code[class*=language-], pre[class*=language-] {
     -webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
-    -webkit-text-orientation: mixed;
     text-orientation: mixed;
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
