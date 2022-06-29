@@ -372,6 +372,74 @@ var glightboxInit = function glightboxInit() {
   }
 };
 /*-----------------------------------------------
+|                     Isotope
+-----------------------------------------------*/
+
+
+var isotopeInit = function isotopeInit() {
+  var Selector = {
+    ISOTOPE_ITEM: '.isotope-item',
+    DATA_ISOTOPE: '[data-isotope]',
+    DATA_FILTER: '[data-filter]',
+    DATA_FILER_NAV: '[data-filter-nav]',
+    DATA_SORT_NAV: '[data-sort-nav]'
+  };
+  var DATA_KEY = {
+    ISOTOPE: 'isotope'
+  };
+  var ClassName = {
+    ACTIVE: 'active'
+  };
+
+  if (window.Isotope) {
+    var masonryItems = document.querySelectorAll(Selector.DATA_ISOTOPE);
+    masonryItems.length && masonryItems.forEach(function (masonryItem) {
+      window.imagesLoaded(masonryItem, function () {
+        masonryItem.querySelectorAll(Selector.ISOTOPE_ITEM).forEach(function (item) {
+          // eslint-disable-next-line
+          item.style.visibility = 'visible';
+        });
+        var userOptions = utils.getData(masonryItem, DATA_KEY.ISOTOPE);
+        var defaultOptions = {
+          itemSelector: Selector.ISOTOPE_ITEM,
+          layoutMode: 'packery'
+        };
+
+        var options = window._.merge(defaultOptions, userOptions);
+
+        var isotope = new window.Isotope(masonryItem, options); //--------- filter -----------------
+
+        var filterElement = document.querySelector(Selector.DATA_FILER_NAV);
+        filterElement === null || filterElement === void 0 ? void 0 : filterElement.addEventListener('click', function (e) {
+          var item = e.target.dataset.filter;
+          isotope.arrange({
+            filter: item
+          });
+          document.querySelectorAll(Selector.DATA_FILTER).forEach(function (el) {
+            el.classList.remove(ClassName.ACTIVE);
+          });
+          e.target.classList.add(ClassName.ACTIVE);
+        }); //---------- filter end ------------
+        // --------- sort -----------------
+
+        var sortElement = document.querySelector(Selector.DATA_SORT_NAV);
+        sortElement === null || sortElement === void 0 ? void 0 : sortElement.addEventListener('click', function (e) {
+          var item = e.target.dataset.sort;
+          isotope.arrange({
+            sortBy: item
+          });
+          document.querySelectorAll(Selector.DATA_SORT_NAV).forEach(function (el) {
+            el.classList.remove(ClassName.ACTIVE);
+          });
+          e.target.classList.add(ClassName.ACTIVE);
+        }); // --------- sort end ------------
+
+        return isotope;
+      });
+    });
+  }
+};
+/*-----------------------------------------------
 |  Swiper
 -----------------------------------------------*/
 
@@ -432,5 +500,6 @@ var swiperInit = function swiperInit() {
 docReady(detectorInit);
 docReady(swiperInit);
 docReady(glightboxInit);
+docReady(isotopeInit);
 docReady(cursorInit);
 //# sourceMappingURL=theme.js.map

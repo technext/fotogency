@@ -330,6 +330,8 @@ $navbar-font-size: $font-size-base  !default;
 $navbar-padding-y: map_get($spacers, 2) !default;
 $navbar-padding-x: $spacer !default;
 
+$link-color: $gray-300 !default;
+
 
 // $navbar-dark-color: rgba($white, .7) !default;
 $top-nav-height: 4.3125rem !default;

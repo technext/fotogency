@@ -220,3 +220,41 @@
      color: $warning;
   }
 }
+
+.gallery-tab {
+  display: flex;
+  flex-direction: column;
+
+  .nav-link {
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    position: relative;
+
+    &.active {
+      color: $black;
+      font-weight: $font-weight-bold;
+
+      &::after {
+        height: 100%;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 0%;
+      background-color: $warning;
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      &::after {
+        height: 100%;
+      }
+    }
+  }
+  }
