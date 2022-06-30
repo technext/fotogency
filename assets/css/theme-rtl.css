@@ -3866,7 +3866,7 @@ textarea.form-control-lg {
 }
 .form-floating > .form-control,
 .form-floating > .form-select {
-  height: calc(3.5rem + 2px);
+  height: calc(3rem + 2px);
   line-height: 1.25;
 }
 .form-floating > label {
@@ -3874,7 +3874,7 @@ textarea.form-control-lg {
   top: 0;
   right: 0;
   height: 100%;
-  padding: 1rem 0.1rem;
+  padding: 0 0.1rem;
   pointer-events: none;
   border: 1px solid transparent;
   -webkit-transform-origin: 100% 0;
@@ -3894,7 +3894,7 @@ textarea.form-control-lg {
   }
 }
 .form-floating > .form-control {
-  padding: 1rem 0.1rem;
+  padding: 0 0.1rem;
 }
 .form-floating > .form-control::-webkit-input-placeholder {
   color: transparent;
@@ -20773,10 +20773,23 @@ code[class*=language-], pre[class*=language-] {
 }
 
 .scroll-indicator {
-  -webkit-writing-mode: vertical-lr;
-  -ms-writing-mode: tb-lr;
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
+  font-weight: 700;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.scroll-indicator:hover {
+  text-decoration: none;
 }
 
 .img-circle {
@@ -21839,50 +21852,7 @@ code[class*=language-], pre[class*=language-] {
   color: #5C5C5C;
 }
 
-.form-search-control {
-  padding: 0.5rem 0.5rem;
-}
-
-.input-group-icon {
-  position: relative;
-}
-.input-group-icon .input-box {
-  padding-right: 2.8rem;
-  vertical-align: middle;
-}
-
-.form-ensurance-control {
-  border-radius: 40px 40px 40px 40px;
-  padding: 1.1rem 2.4rem;
-  background-color: #29313C;
-  border: 1px solid #5EDCD4;
-}
-
-.btn-subscribe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 40px 40px 40px 40px;
-}
-
-.input-group-ensurance-icon {
-  position: relative;
-}
-.input-group-ensurance-icon .input-box {
-  padding-right: 2.8rem;
-  vertical-align: middle;
-}
-.input-group-ensurance-icon .input-box-ensurance-icon {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  color: #5C5C5C;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.form-ensurance-header-control {
+.form-fotogency-header-control {
   background-color: transparent;
   background-clip: padding-box;
   border: 0 solid var(--fg-input-border-color);
@@ -21890,7 +21860,7 @@ code[class*=language-], pre[class*=language-] {
   border-radius: 0;
   color: #5C5C5C;
 }
-.form-ensurance-header-control:hover, .form-ensurance-header-control:focus {
+.form-fotogency-header-control:hover, .form-fotogency-header-control:focus {
   background-color: transparent;
   color: #5C5C5C;
   border-bottom: 1px solid #F59300;
@@ -22089,7 +22059,7 @@ code[class*=language-], pre[class*=language-] {
 }
 
 .social-icons {
-  color: #5C5C5C;
+  color: #8E8E8E;
 }
 .social-icons:hover {
   text-decoration: none;
