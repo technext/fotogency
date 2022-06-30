@@ -332,6 +332,11 @@ $utilities: map_merge(
        3:3,
       )
     ),
+    "overflow": (
+      property: overflow,
+      responsive: true,
+      values: auto hidden visible scroll,
+    ),
   ),
   $utilities
 );

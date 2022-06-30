@@ -34,7 +34,7 @@ append variables
 
 mixin Slide(config)
   .swiper-slide
-    .row.align-items-stretch.align-items-xl-center
+    .row.align-items-xl-center
       .col-lg-5
         img(src=`${CWD}assets/img/exhibitions/${config.image}` alt="").img-fluid.w-100
         .position-absolute.top-5.start-5.mt-n1.d-flex.flex-column.align-items-center
@@ -50,9 +50,9 @@ mixin Slide(config)
 
 
 mixin ExhibitionSlides 
-  +Section('container-fluid').py-3
+  +Section('container-fluid px-0').py-3.position-relative
     .position-absolute.w-100.border-dashed-bottom.opacity-25.top-5.z-index-2
-    .container.px-0.px-md-5
+    .container.px-md-5
       .row.g-0
         .col-lg-12.pb-6.px-0.mb-lg-0
           .swiper-container.swiper-theme(data-swiper!={
