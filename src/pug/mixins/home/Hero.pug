@@ -9,8 +9,9 @@ mixin Hero
       .col-2.d-none.d-lg-block.mt-auto
         img.h-50(src=`${CWD}assets/img/home/img2.png` alt="").img-fluid
       .col-1.mt-auto.d-none.d-lg-block
-        h5.scroll-indicator.text-warning SCROLL 
-          span.fas.fa-arrow-down-long
+        a(href="#footer").scroll-indicator.text-warning 
+          span SCROLL 
+          img(src=`${CWD}assets/img/icons/long-arrow.png` alt="")
       .col-lg-7.position-relative
         img(src=`${CWD}assets/img/home/img1.png` alt="").img-fluid
         .position-absolute.bottom-n100.col-9.mt-6.d-none.d-md-block
@@ -18,9 +19,10 @@ mixin Hero
           p.text-300 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,
         .img-circle.p-5.p-md-7.rounded-circle
         .img-circle-2.p-5.p-md-7.rounded-circle
-        .position-absolute.start-0.bottom-0.d-md-none
-          h5.scroll-indicator.text-warning SCROLL 
-            span.fas.fa-arrow-down-long
+        .position-absolute.start-0.bottom-0.d-lg-none
+          a(href="#footer").scroll-indicator.text-warning 
+            span SCROLL 
+            img(src=`${CWD}assets/img/icons/long-arrow.png` alt="")
       .col-2.d-none.d-lg-block.mb-auto
         img.h-50(src=`${CWD}assets/img/home/img3.png` alt="").img-fluid
     

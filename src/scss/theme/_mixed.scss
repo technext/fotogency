@@ -192,8 +192,15 @@
 }
 
 .scroll-indicator {
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
+  font-weight: $font-weight-bold;
+  transform: rotate(90deg);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .img-circle {

@@ -304,7 +304,8 @@ $input-padding-x-lg: $input-btn-padding-y-lg !default;
 $input-box-shadow: 'null' !default;
 
 $form-floating-padding-x:         0.1rem !default;
-// $form-floating-padding-y:         0 !default;
+$form-floating-padding-y:         0 !default;
+$form-floating-height:            add(3rem, 2px) !default;
 
 //*-----------------------------------------------
 //|   Z-index
