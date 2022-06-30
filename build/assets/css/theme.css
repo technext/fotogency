@@ -20834,43 +20834,77 @@ code[class*=language-], pre[class*=language-] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+@media (min-width: 720px) {
+  .gallery-tab {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 }
 .gallery-tab .nav-link {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-  -webkit-writing-mode: vertical-lr;
-  -ms-writing-mode: tb-lr;
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
   position: relative;
+}
+@media (min-width: 720px) {
+  .gallery-tab .nav-link {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+  }
 }
 .gallery-tab .nav-link.active {
   color: #000;
   font-weight: 700;
 }
 .gallery-tab .nav-link.active::after {
-  height: 100%;
+  width: 100%;
+}
+@media (min-width: 720px) {
+  .gallery-tab .nav-link.active::after {
+    width: 2px;
+    height: 100%;
+  }
 }
 .gallery-tab .nav-link::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
-  width: 2px;
-  height: 0%;
+  width: 0%;
+  height: 2px;
   background-color: #F59300;
   opacity: 1;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+@media (min-width: 720px) {
+  .gallery-tab .nav-link::after {
+    top: 0;
+    width: 2px;
+    height: 0%;
+  }
+}
 .gallery-tab .nav-link:hover::after {
-  height: 100%;
+  width: 100%;
+}
+@media (min-width: 720px) {
+  .gallery-tab .nav-link:hover::after {
+    width: 2px;
+    height: 100%;
+  }
 }
 
 /* -------------------------------------------------------------------------- */

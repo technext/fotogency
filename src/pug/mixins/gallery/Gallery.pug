@@ -57,19 +57,18 @@ append variables
         class: "col-lg-6 col-12 commercial"
       }
     ]
-
 mixin Gallery 
-  +Section.pt-3.pb-6.position-relative
-    .position-absolute.absolute-horizontal-centered.start-0.ms-3.mt-3
-      ul.nav.gallery-tab.d-flex.gap-2(data-filter-nav)
+  +Section.pt-3.pb-10.position-relative
+    .position-md-absolute.start-0.ms-2.mt-3.mb-4
+      ul.nav.gallery-tab.d-flex.gap-3(data-filter-nav)
         li.nav-item
-          a.nav-link.px-0.py-2.isotope-nav.active(href ='#!' data-filter='*') All
+          a.nav-link.p-0.py-md-2.isotope-nav.active(href ='#!' data-filter='*') All
         li.nav-item
-          a.nav-link.px-0.py-2.isotope-nav(href ='#!' data-filter='.shortfilms') Short films
+          a.nav-link.p-0.py-md-2.isotope-nav(href ='#!' data-filter='.shortfilms') Short films
         li.nav-item
-          a.nav-link.px-0.py-2.isotope-nav(href ='#!' data-filter='.professional') Professional
+          a.nav-link.p-0.py-md-2.isotope-nav(href ='#!' data-filter='.professional') Professional
         li.nav-item
-          a.nav-link.px-0.py-2.isotope-nav(href ='#!' data-filter='.commercial') Commercial
+          a.nav-link.p-0.py-md-2.isotope-nav(href ='#!' data-filter='.commercial') Commercial
     .row.g-3(data-isotope!={layoutMode: 'packery'})
       each image, i in galleryImages
         div(class=image.class).gallery-item.isotope-item
