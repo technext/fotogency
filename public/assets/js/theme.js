@@ -408,19 +408,33 @@ var isotopeInit = function isotopeInit() {
         var options = window._.merge(defaultOptions, userOptions);
 
         var isotope = new window.Isotope(masonryItem, options); //--------- filter -----------------
+        // const filterElement = document.querySelector(Selector.DATA_FILER_NAV);
+        // filterElement?.addEventListener('click', (e) => {
+        //   const item = e.target.dataset.filter;
+        //   isotope.arrange({ filter: item });
+        //   document.querySelectorAll(Selector.DATA_FILTER).forEach((el) => {
+        //     el.classList.remove(ClassName.ACTIVE);
+        //   });
+        //   if (e.target.classList.contains('isotope-nav')) {
+        //     e.target.classList.add(ClassName.ACTIVE);
+        //   }
+        // });
+        //---------- filter end ------------
 
         var filterElement = document.querySelector(Selector.DATA_FILER_NAV);
-        filterElement === null || filterElement === void 0 ? void 0 : filterElement.addEventListener('click', function (e) {
-          var item = e.target.dataset.filter;
-          isotope.arrange({
-            filter: item
+        var navItems = filterElement.querySelectorAll(Selector.DATA_FILTER);
+        navItems.forEach(function (element) {
+          element.addEventListener('click', function (el) {
+            var item = el.target.dataset.filter;
+            isotope.arrange({
+              filter: item
+            });
+            navItems.forEach(function (e) {
+              e.classList.remove(ClassName.ACTIVE);
+            });
+            el.target.classList.add(ClassName.ACTIVE);
           });
-          document.querySelectorAll(Selector.DATA_FILTER).forEach(function (el) {
-            el.classList.remove(ClassName.ACTIVE);
-          });
-          e.target.classList.add(ClassName.ACTIVE);
-        }); //---------- filter end ------------
-        // --------- sort -----------------
+        }); // --------- sort -----------------
 
         var sortElement = document.querySelector(Selector.DATA_SORT_NAV);
         sortElement === null || sortElement === void 0 ? void 0 : sortElement.addEventListener('click', function (e) {
