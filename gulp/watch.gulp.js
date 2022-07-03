@@ -13,10 +13,10 @@ gulp.task('watch', () => {
     port: 3000,
     open: true, // or "local"
     notify: false,
-    middleware: compilePug
+    middleware: compilePug,
   });
 
-  const updating = done => {
+  const updating = (done) => {
     browserSync.reload();
     done();
   };
@@ -25,7 +25,7 @@ gulp.task('watch', () => {
   gulp.watch(paths.style.src, gulp.series('style'));
   gulp.watch(paths.script.src, gulp.series('script'));
   gulp.watch(
-    paths.watch.map(dir => `${paths.dir.dev}/${dir}`),
+    paths.watch.map((dir) => `${paths.dir.dev}/${dir}`),
     gulp.series(updating)
   );
 });

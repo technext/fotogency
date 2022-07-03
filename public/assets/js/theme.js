@@ -347,6 +347,10 @@ var cursorInit = function cursorInit() {
   var targets = document.querySelectorAll(['a', '.btn', "[type='button']", 'input', 'textarea']);
   document.addEventListener('mousemove', function (e) {
     cursor.style.transform = "translate3d(calc(".concat(e.clientX, "px - 50%), calc(").concat(e.clientY, "px - 50%), 0)");
+  }); // for safari
+
+  document.addEventListener('touchmove', function (e) {
+    cursor.style.transform = "translate3d(calc(".concat(e.touches[0].clientX, "px - 50%), calc(").concat(e.touches[0].clientY, "px - 50%), 0)");
   });
   targets.forEach(function (item) {
     item.addEventListener('mouseover', function () {

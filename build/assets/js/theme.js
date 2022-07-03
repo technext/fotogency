@@ -347,6 +347,10 @@ var cursorInit = function cursorInit() {
   var targets = document.querySelectorAll(['a', '.btn', "[type='button']", 'input', 'textarea']);
   document.addEventListener('mousemove', function (e) {
     cursor.style.transform = "translate3d(calc(".concat(e.clientX, "px - 50%), calc(").concat(e.clientY, "px - 50%), 0)");
+  }); // for safari
+
+  document.addEventListener('touchmove', function (e) {
+    cursor.style.transform = "translate3d(calc(".concat(e.touches[0].clientX, "px - 50%), calc(").concat(e.touches[0].clientY, "px - 50%), 0)");
   });
   targets.forEach(function (item) {
     item.addEventListener('mouseover', function () {
@@ -408,18 +412,6 @@ var isotopeInit = function isotopeInit() {
         var options = window._.merge(defaultOptions, userOptions);
 
         var isotope = new window.Isotope(masonryItem, options); //--------- filter -----------------
-        // const filterElement = document.querySelector(Selector.DATA_FILER_NAV);
-        // filterElement?.addEventListener('click', (e) => {
-        //   const item = e.target.dataset.filter;
-        //   isotope.arrange({ filter: item });
-        //   document.querySelectorAll(Selector.DATA_FILTER).forEach((el) => {
-        //     el.classList.remove(ClassName.ACTIVE);
-        //   });
-        //   if (e.target.classList.contains('isotope-nav')) {
-        //     e.target.classList.add(ClassName.ACTIVE);
-        //   }
-        // });
-        //---------- filter end ------------
 
         var filterElement = document.querySelector(Selector.DATA_FILER_NAV);
         var navItems = filterElement.querySelectorAll(Selector.DATA_FILTER);
@@ -434,19 +426,7 @@ var isotopeInit = function isotopeInit() {
             });
             el.target.classList.add(ClassName.ACTIVE);
           });
-        }); // --------- sort -----------------
-
-        var sortElement = document.querySelector(Selector.DATA_SORT_NAV);
-        sortElement === null || sortElement === void 0 ? void 0 : sortElement.addEventListener('click', function (e) {
-          var item = e.target.dataset.sort;
-          isotope.arrange({
-            sortBy: item
-          });
-          document.querySelectorAll(Selector.DATA_SORT_NAV).forEach(function (el) {
-            el.classList.remove(ClassName.ACTIVE);
-          });
-          e.target.classList.add(ClassName.ACTIVE);
-        }); // --------- sort end ------------
+        }); //--------- filter end -----------------
 
         return isotope;
       });
