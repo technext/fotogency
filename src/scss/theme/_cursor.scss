@@ -4,9 +4,8 @@
   height: 2.8rem;
   border-radius: 100%;
   border: 1px solid $warning;
+  transition: all .15s ease-out;
   background-color: rgba($warning, 0.0);
-  // transition for width and height
-  transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
   position: fixed;
   pointer-events: none;
   left: 0;
@@ -21,5 +20,11 @@
       height: 3.8rem;
       backdrop-filter: none;
       background-blend-mode: color-burn;
+    }
+  }
+  
+.safari {
+  .cursor-outer {
+    transition: width 0.15s ease-out, height 0.15s ease-out;
   }
 }
