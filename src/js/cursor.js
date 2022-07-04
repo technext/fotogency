@@ -8,14 +8,14 @@ const cursorInit = () => {
     'textarea',
   ]);
 
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
-  });
-
-  // for safari
-  document.addEventListener('touchmove', (e) => {
-    cursor.style.transform = `translate3d(calc(${e.touches[0].clientX}px - 50%), calc(${e.touches[0].clientY}px - 50%), 0)`;
-  });
+  // safari mousemove bug fix
+  document.addEventListener(
+    'mousemove',
+    (e) => {
+      cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
+    },
+    { passive: true }
+  );
 
   targets.forEach((item) => {
     item.addEventListener('mouseover', () => {

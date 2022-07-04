@@ -344,13 +344,12 @@ var DomNode = /*#__PURE__*/function () {
 
 var cursorInit = function cursorInit() {
   var cursor = document.querySelector('.cursor-outer');
-  var targets = document.querySelectorAll(['a', '.btn', "[type='button']", 'input', 'textarea']);
+  var targets = document.querySelectorAll(['a', '.btn', "[type='button']", 'input', 'textarea']); // safari mousemove bug fix
+
   document.addEventListener('mousemove', function (e) {
     cursor.style.transform = "translate3d(calc(".concat(e.clientX, "px - 50%), calc(").concat(e.clientY, "px - 50%), 0)");
-  }); // for safari
-
-  document.addEventListener('touchmove', function (e) {
-    cursor.style.transform = "translate3d(calc(".concat(e.touches[0].clientX, "px - 50%), calc(").concat(e.touches[0].clientY, "px - 50%), 0)");
+  }, {
+    passive: true
   });
   targets.forEach(function (item) {
     item.addEventListener('mouseover', function () {
