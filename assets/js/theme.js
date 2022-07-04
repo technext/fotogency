@@ -347,12 +347,6 @@ var cursorInit = function cursorInit() {
   var targets = document.querySelectorAll(['a', '.btn', "[type='button']", 'input', 'textarea']);
   document.addEventListener('mousemove', function (e) {
     cursor.style.transform = "translate3d(calc(".concat(e.clientX, "px - 50%), calc(").concat(e.clientY, "px - 50%), 0)");
-
-    if (navigator.userAgent.indexOf('Safari') !== -1) {
-      cursor.style.transition = 'all 0.15s';
-    }
-  }, {
-    passive: true
   });
   targets.forEach(function (item) {
     item.addEventListener('mouseover', function () {

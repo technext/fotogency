@@ -22150,10 +22150,10 @@ code[class*=language-], pre[class*=language-] {
   height: 2.8rem;
   border-radius: 100%;
   border: 1px solid #F59300;
+  -webkit-transition: all 0.15s ease-out;
+  -o-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
   background-color: rgba(245, 147, 0, 0);
-  -webkit-transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
-  -o-transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
-  transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
   position: fixed;
   pointer-events: none;
   right: 0;
@@ -22172,5 +22172,11 @@ code[class*=language-], pre[class*=language-] {
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   background-blend-mode: color-burn;
+}
+
+.safari .cursor-outer {
+  -webkit-transition: width 0.15s ease-out, height 0.15s ease-out;
+  -o-transition: width 0.15s ease-out, height 0.15s ease-out;
+  transition: width 0.15s ease-out, height 0.15s ease-out;
 }
 /*# sourceMappingURL=theme-rtl.css.map */
