@@ -22151,9 +22151,9 @@ code[class*=language-], pre[class*=language-] {
   border-radius: 100%;
   border: 1px solid #F59300;
   background-color: rgba(245, 147, 0, 0);
-  -webkit-transition: all 150ms ease-out;
-  -o-transition: all 150ms ease-out;
-  transition: all 150ms ease-out;
+  -webkit-transition: all 0s ease-out;
+  -o-transition: all 0s ease-out;
+  transition: all 0s ease-out;
   position: fixed;
   pointer-events: none;
   right: 0;
