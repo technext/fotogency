@@ -12,8 +12,7 @@
     "publish:force": "cross-var git push origin `git subtree split --prefix live $npm_package_version`:gh-pages --force",
     "publish:f": "git push origin `git subtree split --prefix live main`:gh-pages --force",
     "localhost": "ssh -R 80:localhost:3000 ssh.localhost.run",
-    "deploy": "gh-pages -d live",
-    "test-live": "npm run live && git add . && git commit -m 'update' && git push && npm run deploy"
+    "deploy": "gh-pages -d live"
   },
   "keywords": [],
   "author": "",
